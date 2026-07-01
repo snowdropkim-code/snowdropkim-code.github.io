@@ -1,12 +1,903 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>세린종합상사</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>세린종합상사 | 병원 린넨류 전문 제작·납품</title>
+  <meta name="description" content="부산에서 40년 이상 병원 린넨류를 직접 제작·납품해온 세린종합상사. 전 공정 직접 생산, 병원별 맞춤 제작, 장기 거래 신뢰를 바탕으로 안정적인 납품을 제공합니다." />
+  <meta name="keywords" content="세린종합상사, 병원 린넨, 의료기관 린넨, 환자복, 병원 침구류, 병원 커튼, 맞춤 제작, 부산 린넨 제작" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0f172a" />
+  <link rel="canonical" href="https://www.serinlinen.com" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="세린종합상사 | 병원 린넨류 전문 제작·납품" />
+  <meta property="og:description" content="부산에서 40년 이상 이어온 병원 린넨류 제작·납품의 경험. 직접 제작, 맞춤 생산, 오래가는 신뢰." />
+  <meta property="og:url" content="https://www.serinlinen.com" />
+  <meta property="og:site_name" content="세린종합상사" />
+
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --surface-2: #eef2f7;
+      --text: #0f172a;
+      --muted: #475569;
+      --line: #dbe3ee;
+      --primary: #0f3d75;
+      --primary-2: #174f95;
+      --accent: #c79a42;
+      --hero: linear-gradient(135deg, #0f172a 0%, #123b70 55%, #1e5aa8 100%);
+      --shadow: 0 18px 50px rgba(15, 23, 42, 0.10);
+      --radius: 18px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Pretendard", "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      letter-spacing: -0.01em;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 88px 0;
+    }
+
+    .section-sm {
+      padding: 64px 0;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary);
+      background: rgba(15, 61, 117, 0.08);
+      padding: 8px 12px;
+      border-radius: 999px;
+      margin-bottom: 16px;
+    }
+
+    h1, h2, h3, h4 {
+      margin: 0 0 14px;
+      line-height: 1.25;
+      letter-spacing: -0.03em;
+    }
+
+    h1 {
+      font-size: clamp(2.3rem, 5vw, 4.4rem);
+      font-weight: 800;
+    }
+
+    h2 {
+      font-size: clamp(1.7rem, 3vw, 2.6rem);
+      font-weight: 800;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    p {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+
+    .lead {
+      font-size: 1.08rem;
+      color: rgba(255,255,255,0.88);
+      max-width: 760px;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 26px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 20px;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: 0.2s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: #fff;
+      color: var(--primary);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 24px rgba(255,255,255,0.18);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: #fff;
+      border-color: rgba(255,255,255,0.3);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.08);
+    }
+
+    .btn-dark {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .btn-dark:hover {
+      background: var(--primary-2);
+    }
+
+    /* Header */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      background: rgba(255,255,255,0.88);
+      border-bottom: 1px solid rgba(219, 227, 238, 0.9);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 74px;
+      gap: 20px;
+    }
+
+    .brand {
+      font-weight: 800;
+      font-size: 1.05rem;
+      color: var(--text);
+      letter-spacing: -0.02em;
+    }
+
+    .brand small {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--muted);
+      margin-top: 2px;
+      letter-spacing: 0;
+    }
+
+    .nav {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .nav a {
+      font-size: 0.95rem;
+      color: #334155;
+      font-weight: 600;
+    }
+
+    .nav a:hover {
+      color: var(--primary);
+    }
+
+    /* Hero */
+    .hero {
+      background: var(--hero);
+      color: #fff;
+      padding: 96px 0 74px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -120px;
+      top: -60px;
+      width: 360px;
+      height: 360px;
+      background: radial-gradient(circle, rgba(255,255,255,0.14), transparent 68%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 34px;
+      align-items: stretch;
+    }
+
+    .hero-card {
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.16);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: 0 18px 50px rgba(0,0,0,0.14);
+    }
+
+    .hero-points {
+      display: grid;
+      gap: 14px;
+    }
+
+    .hero-point {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      color: rgba(255,255,255,0.93);
+      font-size: 0.98rem;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      margin-top: 10px;
+      flex: 0 0 auto;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .stat {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 18px;
+      padding: 18px;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.55rem;
+      line-height: 1.1;
+      margin-bottom: 8px;
+    }
+
+    .stat span {
+      font-size: 0.93rem;
+      color: rgba(255,255,255,0.88);
+    }
+
+    /* Cards */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+
+    .card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(15, 61, 117, 0.08);
+      color: var(--primary);
+      font-size: 1.25rem;
+      margin-bottom: 16px;
+    }
+
+    /* Highlight band */
+    .band {
+      background: #fff;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .band-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      align-items: center;
+    }
+
+    .band-item {
+      padding: 18px 0;
+      text-align: center;
+    }
+
+    .band-item strong {
+      display: block;
+      color: var(--primary);
+      font-size: 1.1rem;
+      margin-bottom: 6px;
+    }
+
+    .band-item span {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    /* Product list */
+    .product-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 22px;
+    }
+
+    .product-item {
+      background: var(--surface-2);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 18px 18px;
+    }
+
+    .product-item strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--text);
+      font-size: 1rem;
+    }
+
+    .product-item span {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    /* Process */
+    .step-wrap {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .step {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 24px;
+      position: relative;
+      box-shadow: var(--shadow);
+    }
+
+    .step-no {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      background: var(--primary);
+      color: #fff;
+      font-weight: 800;
+      margin-bottom: 14px;
+      font-size: 0.95rem;
+    }
+
+    /* CTA */
+    .cta {
+      background: linear-gradient(135deg, #102847 0%, #123b70 100%);
+      color: #fff;
+      border-radius: 28px;
+      padding: 42px;
+      box-shadow: 0 24px 70px rgba(15, 23, 42, 0.18);
+    }
+
+    .cta p {
+      color: rgba(255,255,255,0.86);
+      max-width: 720px;
+    }
+
+    /* Contact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .contact-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .contact-item {
+      padding: 14px 16px;
+      background: var(--surface-2);
+      border-radius: 14px;
+      border: 1px solid var(--line);
+    }
+
+    .contact-item strong {
+      display: block;
+      color: var(--text);
+      margin-bottom: 4px;
+      font-size: 0.95rem;
+    }
+
+    .contact-item span, .contact-item a {
+      color: var(--muted);
+      font-size: 0.97rem;
+    }
+
+    .notice {
+      font-size: 0.92rem;
+      color: var(--muted);
+      background: #f8fafc;
+      padding: 14px 16px;
+      border-radius: 14px;
+      border: 1px dashed var(--line);
+      margin-top: 16px;
+    }
+
+    /* Footer */
+    .footer {
+      padding: 34px 0 60px;
+      color: #64748b;
+      font-size: 0.92rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      border-top: 1px solid var(--line);
+      padding-top: 22px;
+    }
+
+    /* Responsive */
+    @media (max-width: 980px) {
+      .hero-grid,
+      .grid-2,
+      .grid-3,
+      .contact-grid,
+      .step-wrap,
+      .band-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-stats,
+      .product-list {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 82px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        width: min(var(--max), calc(100% - 28px));
+      }
+
+      .section {
+        padding: 72px 0;
+      }
+
+      .hero-card,
+      .card,
+      .cta,
+      .contact-card,
+      .step {
+        padding: 22px;
+      }
+
+      .btn-group {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>세린종합상사</h1>
-  <p>병원 린넨류 일체 제작·납품</p>
+
+  <header class="header">
+    <div class="container header-inner">
+      <a href="#top" class="brand">
+        세린종합상사
+        <small>병원 린넨류 전문 제작·납품</small>
+      </a>
+
+      <nav class="nav" aria-label="주요 메뉴">
+        <a href="#about">회사소개</a>
+        <a href="#strength">세린의 강점</a>
+        <a href="#products">주요 품목</a>
+        <a href="#process">진행 방식</a>
+        <a href="#contact">문의하기</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow" style="background: rgba(255,255,255,0.12); color: #fff;">부산에서 40년 이상 이어온 병원 린넨 제작·납품의 경험</span>
+          <h1>병원 린넨류 전문<br />제작·납품</h1>
+          <p class="lead">
+            세린종합상사는 부산에서 40년 이상 병원 린넨류를 직접 제작·납품해온 업체입니다.
+            전 공정 직접 생산을 바탕으로 병원별 환경에 맞춘 맞춤 제작과 안정적인 품질 관리를 제공하며,
+            오랜 거래처와의 지속적인 신뢰를 이어오고 있습니다.
+          </p>
+
+          <div class="btn-group">
+            <a class="btn btn-primary" href="#contact">문의하기</a>
+            <a class="btn btn-secondary" href="#strength">강점 보기</a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat">
+              <strong>40년+</strong>
+              <span>부산 지역 기반의 병원 린넨 제작·납품 경험</span>
+            </div>
+            <div class="stat">
+              <strong>직접 생산</strong>
+              <span>전 공정 직접 제작 기반의 일관된 품질 관리</span>
+            </div>
+            <div class="stat">
+              <strong>맞춤 제작</strong>
+              <span>병원별 규격과 운영 환경에 맞춘 생산 대응</span>
+            </div>
+            <div class="stat">
+              <strong>장기 거래</strong>
+              <span>수십 년간 이어진 거래처 신뢰와 안정적 납품</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <h3 style="color:#fff; font-size:1.25rem; margin-bottom: 18px;">세린이 중요한 이유</h3>
+          <div class="hero-points">
+            <div class="hero-point"><span class="dot"></span><span>병원 운영에 필요한 린넨류를 직접 생산해 품질 편차와 대응 속도를 안정적으로 관리합니다.</span></div>
+            <div class="hero-point"><span class="dot"></span><span>규격품 중심이 아닌 병원별 요구사항을 반영한 맞춤 제작이 가능합니다.</span></div>
+            <div class="hero-point"><span class="dot"></span><span>오랜 거래처와의 지속적인 거래 경험은 세린의 신뢰와 대응력을 보여주는 가장 현실적인 근거입니다.</span></div>
+            <div class="hero-point"><span class="dot"></span><span>단기 납품보다 오래 함께 갈 수 있는 안정적인 거래 관계를 지향합니다.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="container band-grid">
+        <div class="band-item">
+          <strong>부산 기반</strong>
+          <span>지역 밀착형 제작·납품 운영</span>
+        </div>
+        <div class="band-item">
+          <strong>병원 맞춤 대응</strong>
+          <span>환경과 규격에 맞춘 제작</span>
+        </div>
+        <div class="band-item">
+          <strong>직접 생산</strong>
+          <span>외주 의존보다 높은 통제력</span>
+        </div>
+        <div class="band-item">
+          <strong>신뢰 중심 거래</strong>
+          <span>장기 거래처와 함께 축적한 신뢰</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container grid-2">
+        <div>
+          <span class="eyebrow">회사소개</span>
+          <h2>오래된 업체가 아니라,<br />오래 거래할 수 있는 업체</h2>
+          <p>
+            세린종합상사는 부산에서 40년 이상 병원 린넨류를 제작·납품해오며 현장 중심의 경험을 축적해왔습니다.
+            오랜 업력은 단순한 시간이 아니라, 제품의 실용성, 납품의 안정성, 거래처 대응 방식에 대한 이해의 깊이입니다.
+          </p>
+          <p>
+            세린은 병원 운영에 필요한 린넨류를 직접 생산하며, 병원별 사용 환경과 요구사항에 맞춘 맞춤 제작으로
+            보다 실질적인 납품 대응을 지향합니다. 지금까지 이어온 거래처와의 오랜 관계는 세린의 가장 큰 신뢰 자산입니다.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>세린이 지키는 기준</h3>
+          <p><strong>안정적인 품질</strong><br />직접 생산 기반으로 제품 완성도와 품질 일관성을 관리합니다.</p>
+          <p><strong>맞춤 대응</strong><br />병원별 운영 환경과 요구사항을 반영해 실질적인 제작·납품을 진행합니다.</p>
+          <p><strong>장기적 신뢰</strong><br />한 번의 납품보다 오래 이어지는 거래 관계를 중요하게 생각합니다.</p>
+          <p><strong>현장 중심 운영</strong><br />실제 사용성과 운영 편의성을 고려한 제품 제작을 지향합니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="strength" class="section" style="background:#f1f5f9;">
+      <div class="container">
+        <span class="eyebrow">세린의 강점</span>
+        <h2>세린의 경쟁력은 과장이 아니라<br />오랜 운영과 거래가 증명합니다</h2>
+
+        <div class="grid-2" style="margin-top: 28px;">
+          <article class="card">
+            <div class="icon">01</div>
+            <h3>40년 이상 축적된 제작 경험</h3>
+            <p>
+              세린은 부산에서 40년 이상 병원 린넨류를 제작·납품해오며 현장 중심의 제작 경험을 축적해왔습니다.
+              오랜 업력은 제품과 납품의 기본을 꾸준히 지켜온 시간입니다.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="icon">02</div>
+            <h3>전 공정 직접 생산</h3>
+            <p>
+              외주 의존이 아닌 직접 제작 시스템을 바탕으로 제품의 완성도와 품질 일관성을 관리합니다.
+              병원 린넨류에 필요한 내구성과 실용성, 납기 안정성을 직접 생산 기반으로 대응합니다.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="icon">03</div>
+            <h3>병원별 맞춤 제작 가능</h3>
+            <p>
+              병원마다 사용하는 규격과 운영 방식은 다릅니다.
+              세린은 병원별 환경과 요구사항을 반영해 보다 실질적인 맞춤 제작이 가능합니다.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="icon">04</div>
+            <h3>수십 년간 이어진 거래 신뢰</h3>
+            <p>
+              현재 거래처들과 장기간 거래를 이어오고 있다는 점은 세린의 가장 큰 신뢰 자산입니다.
+              단기 납품이 아니라, 오랜 기간 안정적으로 거래할 수 있는 파트너십을 지향합니다.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="products" class="section">
+      <div class="container grid-2">
+        <div>
+          <span class="eyebrow">주요 품목</span>
+          <h2>병원 운영에 필요한<br />린넨류를 직접 제작·납품합니다</h2>
+          <p>
+            세린은 의료기관 운영 현장에서 지속적으로 사용되는 린넨류를 중심으로 제작·납품합니다.
+            정형화된 제품 공급에 그치지 않고, 사용 목적과 환경을 고려한 맞춤 제작 상담도 가능합니다.
+          </p>
+
+          <div class="product-list">
+            <div class="product-item">
+              <strong>환자복</strong>
+              <span>용도와 규격에 맞춘 제작 대응</span>
+            </div>
+            <div class="product-item">
+              <strong>침구류</strong>
+              <span>병실 운영에 필요한 기본 린넨류</span>
+            </div>
+            <div class="product-item">
+              <strong>커튼류</strong>
+              <span>병동 및 공간 운영에 맞춘 제작</span>
+            </div>
+            <div class="product-item">
+              <strong>수술실·병동 린넨</strong>
+              <span>의료 현장 사용 목적에 맞춘 납품</span>
+            </div>
+            <div class="product-item">
+              <strong>기타 맞춤 제작</strong>
+              <span>병원별 규격 및 요청사항 반영</span>
+            </div>
+            <div class="product-item">
+              <strong>장기 납품 대응</strong>
+              <span>지속적 거래를 고려한 운영 지원</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>납품 가능 분야</h3>
+          <p>세린은 다음과 같은 의료기관 및 관련 시설에 맞춘 납품 상담이 가능합니다.</p>
+          <ul style="margin:18px 0 0; padding-left: 18px; color: var(--muted);">
+            <li>종합병원 및 병원</li>
+            <li>의원 및 전문 클리닉</li>
+            <li>요양병원</li>
+            <li>재활·요양 시설</li>
+            <li>산후조리원 및 관련 의료시설</li>
+          </ul>
+
+          <div class="notice">
+            ※ 실제 품목, 규격, 제작 범위는 병원별 운영 환경과 요청사항에 따라 상담 후 안내해드릴 수 있습니다.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="process" class="section" style="background:#f8fafc;">
+      <div class="container">
+        <span class="eyebrow">진행 방식</span>
+        <h2>상담부터 납품까지<br />실무적으로 진행합니다</h2>
+
+        <div class="step-wrap">
+          <div class="step">
+            <div class="step-no">01</div>
+            <h3>요구사항 확인</h3>
+            <p>사용 목적, 규격, 수량, 운영 환경 등 기본 조건을 확인합니다.</p>
+          </div>
+
+          <div class="step">
+            <div class="step-no">02</div>
+            <h3>맞춤 제작 상담</h3>
+            <p>병원별 필요에 맞춘 품목과 제작 방향을 협의합니다.</p>
+          </div>
+
+          <div class="step">
+            <div class="step-no">03</div>
+            <h3>직접 생산 진행</h3>
+            <p>전 공정 직접 생산 기반으로 품질과 납기 일정을 관리합니다.</p>
+          </div>
+
+          <div class="step">
+            <div class="step-no">04</div>
+            <h3>안정적 납품 대응</h3>
+            <p>일회성 납품이 아닌 장기 거래를 고려한 대응을 지향합니다.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-sm">
+      <div class="container">
+        <div class="cta">
+          <span class="eyebrow" style="background: rgba(255,255,255,0.12); color: #fff;">문의 안내</span>
+          <h2 style="color:#fff;">병원 운영 환경에 맞는 린넨류 제작·납품을 찾고 계신가요?</h2>
+          <p>
+            세린종합상사는 오랜 경험과 직접 생산 기반을 바탕으로,
+            병원별 요구에 맞는 실질적인 제작·납품 상담을 진행합니다.
+          </p>
+          <div class="btn-group">
+            <a href="#contact" class="btn btn-primary">문의 정보 보기</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container contact-grid">
+        <div class="contact-card">
+          <span class="eyebrow">문의하기</span>
+          <h2>상담 및 문의</h2>
+          <p>
+            아래 연락처로 문의해주시면 확인 후 안내드리겠습니다.
+            병원별 필요 품목, 규격, 수량, 납품 조건 등을 함께 알려주시면 보다 정확한 상담이 가능합니다.
+          </p>
+
+          <div class="contact-list">
+            <div class="contact-item">
+              <strong>전화</strong>
+              <span>051-000-0000</span>
+            </div>
+            <div class="contact-item">
+              <strong>이메일</strong>
+              <a href="mailto:info@serinlinen.com">info@serinlinen.com</a>
+            </div>
+            <div class="contact-item">
+              <strong>주소</strong>
+              <span>부산광역시 ○○구 ○○로 00 (실제 주소로 교체)</span>
+            </div>
+            <div class="contact-item">
+              <strong>운영 안내</strong>
+              <span>상담 가능 시간 및 방문 가능 여부는 사전 문의 부탁드립니다.</span>
+            </div>
+          </div>
+
+          <div class="btn-group">
+            <a class="btn btn-dark" href="tel:0510000000">전화 문의</a>
+            <a class="btn btn-dark" href="mailto:info@serinlinen.com">이메일 문의</a>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <h3>문의 시 함께 알려주시면 좋습니다</h3>
+          <ul style="margin:18px 0 0; padding-left: 18px; color: var(--muted);">
+            <li>의료기관 유형 및 사용 부서</li>
+            <li>필요 품목과 대략적인 수량</li>
+            <li>규격 또는 현재 사용 중인 사양</li>
+            <li>맞춤 제작 필요 여부</li>
+            <li>희망 납기 및 납품 조건</li>
+          </ul>
+
+          <div class="notice">
+            ※ 위 연락처는 예시입니다. 실제 전화번호, 이메일, 주소로 반드시 교체 후 오픈하세요.
+          </div>
+
+          <div class="notice">
+            ※ 카카오톡 채널, 네이버 지도 링크, 사업자정보, 회사 소개 이미지가 준비되면 추가 반영하면 더 신뢰감 있게 보입니다.
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <strong style="color:#334155;">세린종합상사</strong><br />
+        병원 린넨류 전문 제작·납품
+      </div>
+      <div>
+        © <span id="year"></span> SERIN. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
