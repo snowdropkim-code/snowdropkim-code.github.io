@@ -4,15 +4,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>세린종합상사 | 병원 린넨류 전문 제작·납품</title>
-  <meta name="description" content="부산에서 40년 이상 병원 린넨류를 직접 제작·납품해온 세린종합상사. 전 공정 직접 생산, 병원별 맞춤 제작, 장기 거래 신뢰를 바탕으로 안정적인 납품을 제공합니다." />
-  <meta name="keywords" content="세린종합상사, 병원 린넨, 환자복, 수술복, 검진복, 수술가운, 병원 침구류, 수술포, 기구포, 보호대, 부산 린넨 제작" />
+  <meta
+    name="description"
+    content="부산에서 40년 이상 병원 린넨류를 직접 제작·납품해온 세린종합상사. 전 공정 직접 생산, 병원별 맞춤 제작, 장기 거래 신뢰를 바탕으로 안정적인 납품을 제공합니다."
+  />
+  <meta
+    name="keywords"
+    content="세린종합상사, 병원 린넨, 환자복, 수술복, 검진복, 수술가운, 병원 침구류, 수술포, 기구포, 보호대, 부산 린넨 제작"
+  />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#0f172a" />
   <link rel="canonical" href="https://www.serinlinen.com" />
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content="세린종합상사 | 병원 린넨류 전문 제작·납품" />
-  <meta property="og:description" content="부산에서 40년 이상 이어온 병원 린넨류 제작·납품의 경험. 직접 제작, 맞춤 생산, 오래가는 신뢰." />
+  <meta
+    property="og:description"
+    content="부산에서 40년 이상 이어온 병원 린넨류 제작·납품의 경험. 직접 제작, 맞춤 생산, 오래가는 신뢰."
+  />
   <meta property="og:url" content="https://www.serinlinen.com" />
   <meta property="og:site_name" content="세린종합상사" />
 
@@ -28,7 +37,7 @@
       --primary-2: #174f95;
       --accent: #c79a42;
       --hero: linear-gradient(135deg, #0f172a 0%, #123b70 55%, #1e5aa8 100%);
-      --shadow: 0 18px 50px rgba(15, 23, 42, 0.10);
+      --shadow: 0 18px 50px rgba(15, 23, 42, 0.1);
       --radius: 18px;
       --max: 1180px;
     }
@@ -91,6 +100,12 @@
       margin: 0 0 14px;
       color: var(--muted);
       font-size: 1.02rem;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--muted);
     }
 
     .lead {
@@ -240,6 +255,7 @@
       border-radius: 18px;
       aspect-ratio: 16 / 10;
       object-fit: cover;
+      background: #dbeafe;
     }
 
     .hero-caption {
@@ -280,9 +296,9 @@
       gap: 22px;
     }
 
-    .grid-3 {
+    .grid-4 {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 22px;
     }
 
@@ -293,8 +309,6 @@
       padding: 26px;
       box-shadow: var(--shadow);
     }
-
-    .card h3 { margin-bottom: 10px; color: var(--text); }
 
     .icon {
       width: 48px;
@@ -392,6 +406,7 @@
       border-radius: 16px;
       aspect-ratio: 16 / 9;
       object-fit: cover;
+      background: #f1f5f9;
     }
 
     .facility-photo-small {
@@ -446,96 +461,66 @@
     }
 
     .cta p {
-      color: rgba(255,255,255,0.86);
-      max-width: 720px;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 22px;
-      align-items: stretch;
-    }
-
-    .contact-card {
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      padding: 28px;
-      box-shadow: var(--shadow);
+      color: rgba(255,255,255,0.88);
     }
 
     .contact-list {
       display: grid;
-      gap: 14px;
-      margin-top: 18px;
+      gap: 12px;
+      margin-top: 22px;
     }
 
     .contact-item {
-      padding: 14px 16px;
-      background: var(--surface-2);
-      border-radius: 14px;
-      border: 1px solid var(--line);
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 16px 18px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 16px;
     }
 
     .contact-item strong {
       display: block;
-      color: var(--text);
       margin-bottom: 4px;
-      font-size: 0.95rem;
+      color: #fff;
+      font-size: 0.96rem;
     }
 
-    .contact-item span, .contact-item a {
-      color: var(--muted);
-      font-size: 0.97rem;
-    }
-
-    .notice {
-      font-size: 0.92rem;
-      color: var(--muted);
-      background: #f8fafc;
-      padding: 14px 16px;
-      border-radius: 14px;
-      border: 1px dashed var(--line);
-      margin-top: 16px;
+    .contact-item span,
+    .contact-item a {
+      color: rgba(255,255,255,0.88);
+      word-break: break-word;
     }
 
     .footer {
-      padding: 34px 0 60px;
+      padding: 34px 0 44px;
       color: #64748b;
-      font-size: 0.92rem;
-    }
-
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      gap: 18px;
-      flex-wrap: wrap;
-      border-top: 1px solid var(--line);
-      padding-top: 22px;
+      font-size: 0.94rem;
     }
 
     @media (max-width: 980px) {
       .hero-grid,
       .grid-2,
-      .grid-3,
-      .contact-grid,
+      .facility-grid,
       .step-wrap,
-      .band-grid,
-      .facility-grid {
+      .grid-4,
+      .band-grid {
         grid-template-columns: 1fr;
-      }
-
-      .hero-stats {
-        grid-template-columns: 1fr;
-      }
-
-      .nav {
-        display: none;
       }
 
       .hero {
-        padding-top: 82px;
+        padding: 76px 0 58px;
+      }
+
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 12px 0;
+      }
+
+      .nav {
+        gap: 12px;
       }
     }
 
@@ -545,16 +530,15 @@
       }
 
       .section {
-        padding: 72px 0;
+        padding: 68px 0;
       }
 
-      .card,
-      .cta,
-      .contact-card,
-      .step,
-      .hero-photo-wrap,
-      .facility-photo-card {
-        padding: 20px;
+      .section-sm {
+        padding: 48px 0;
+      }
+
+      .hero-stats {
+        grid-template-columns: 1fr 1fr;
       }
 
       .btn-group {
@@ -564,415 +548,392 @@
       .btn {
         width: 100%;
       }
+
+      .cta {
+        padding: 28px 22px;
+      }
     }
   </style>
 </head>
 <body>
-
   <header class="header">
     <div class="container header-inner">
-      <a href="#top" class="brand">
+      <div class="brand">
         세린종합상사
         <small>병원 린넨류 전문 제작·납품</small>
-      </a>
+      </div>
 
-      <nav class="nav" aria-label="주요 메뉴">
+      <nav class="nav">
         <a href="#about">회사소개</a>
-        <a href="#strength">세린의 강점</a>
-        <a href="#products">납품 가능 품목</a>
+        <a href="#strength">강점</a>
+        <a href="#products">납품 품목</a>
         <a href="#facility">생산 환경</a>
         <a href="#contact">문의하기</a>
       </nav>
     </div>
   </header>
 
-  <main id="top">
-    <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <span class="eyebrow" style="background: rgba(255,255,255,0.12); color: #fff;">부산에서 40년 이상 이어온 병원 린넨 제작·납품의 경험</span>
-          <h1>병원 린넨류 전문<br />제작·납품</h1>
-          <p class="lead">
-            세린종합상사는 부산에서 40년 이상 병원 린넨류를 직접 제작·납품해온 업체입니다.
-            전 공정 직접 생산을 바탕으로 병원별 환경과 요구사항에 맞춘 맞춤 제작과 안정적인 품질 관리를 제공하며,
-            오랜 거래처와의 지속적인 신뢰를 이어오고 있습니다.
-            <span class="highlight-white">모든 린넨 제작류는 병원별 사양과 사용 환경에 맞춘 맞춤 제작이 가능합니다.</span>
-          </p>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow" style="background: rgba(255,255,255,0.12); color:#fff;">부산 40년 업력</span>
+        <h1>
+          병원 린넨류 전문<br />
+          제작·납품
+        </h1>
+        <p class="lead">
+          세린종합상사는 부산에서 40년 이상 병원 린넨류를 직접 제작·납품해온 업체입니다.
+          전 공정 직접 생산을 바탕으로 병원별 환경과 요구사항에 맞춘 맞춤 제작과 안정적인 품질 관리를 제공하며,
+          오랜 거래처와의 지속적인 신뢰를 이어오고 있습니다.
+          <span class="highlight-white">모든 린넨 제작류는 병원별 사양과 사용 환경에 맞춘 맞춤 제작이 가능합니다.</span>
+        </p>
 
-          <div class="btn-group">
-            <a class="btn btn-primary" href="#contact">문의하기</a>
-            <a class="btn btn-secondary" href="#products">품목 보기</a>
-          </div>
-
-          <div class="hero-stats">
-            <div class="stat">
-              <strong>40년+</strong>
-              <span>부산 지역 기반의 병원 린넨 제작·납품 경험</span>
-            </div>
-            <div class="stat">
-              <strong>직접 생산</strong>
-              <span>전 공정 직접 제작 기반의 일관된 품질 관리</span>
-            </div>
-            <div class="stat">
-              <strong>맞춤 제작</strong>
-              <span>병원별 사양과 운영 환경에 맞춘 생산 대응</span>
-            </div>
-            <div class="stat">
-              <strong>장기 거래</strong>
-              <span>수십 년간 이어진 거래처 신뢰와 안정적 납품</span>
-            </div>
-          </div>
+        <div class="btn-group">
+          <a href="#contact" class="btn btn-primary">문의하기</a>
+          <a href="#products" class="btn btn-secondary">납품 품목 보기</a>
         </div>
 
-        <div class="hero-photo-wrap">
-          <img
-            class="hero-photo"
-            src="https://www.genspark.ai/api/files/s/sZbIR7wR"
-            alt="세린종합상사 원단 보관 및 작업 공간"
-          />
-          <p class="hero-caption">
-            생산 현장과 원단 보관 공간을 직접 운영하며, 병원별 사양에 맞는 린넨 제작을 진행합니다.
-          </p>
+        <div class="hero-stats">
+          <div class="stat">
+            <strong>40년+</strong>
+            <span>부산 지역 기반의 병원 린넨 제작·납품 경험</span>
+          </div>
+          <div class="stat">
+            <strong>직접 생산</strong>
+            <span>전 공정 직접 제작 기반의 일관된 품질 관리</span>
+          </div>
+          <div class="stat">
+            <strong>맞춤 제작</strong>
+            <span>병원별 사양과 운영 환경에 맞춘 생산 대응</span>
+          </div>
+          <div class="stat">
+            <strong>장기 거래</strong>
+            <span>수십 년간 이어진 거래처 신뢰와 안정적 납품</span>
+          </div>
         </div>
       </div>
-    </section>
 
-    <section class="band">
-      <div class="container band-grid">
-        <div class="band-item">
-          <strong>부산 기반</strong>
-          <span>40년 이상 현장 중심 운영</span>
-        </div>
-        <div class="band-item">
-          <strong>전 공정 직접 생산</strong>
-          <span>안정적인 품질과 납기 관리</span>
-        </div>
-        <div class="band-item">
-          <strong>병원 맞춤 제작</strong>
-          <span>규격·용도별 실질적 대응</span>
-        </div>
-        <div class="band-item">
-          <strong>장기 거래 신뢰</strong>
-          <span>수십 년간 이어진 거래처 관계</span>
-        </div>
+      <div class="hero-photo-wrap">
+        <img
+          class="hero-photo"
+          src="https://www.genspark.ai/api/files/s/sZbIR7wR"
+          alt="세린종합상사 원단 보관 및 작업 공간"
+        />
+        <p class="hero-caption">
+          생산 현장과 원단 보관 공간을 직접 운영하며, 병원별 사양에 맞는 린넨 제작을 진행합니다.
+        </p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="about" class="section">
-      <div class="container grid-2">
-        <div>
-          <span class="eyebrow">회사소개</span>
-          <h2>오래된 업체가 아니라,<br />오래 거래할 수 있는 업체</h2>
+  <section class="band section-sm">
+    <div class="container band-grid">
+      <div class="band-item">
+        <strong>부산 기반</strong>
+        <span>40년 이상 현장 중심 운영</span>
+      </div>
+      <div class="band-item">
+        <strong>전 공정 직접 생산</strong>
+        <span>안정적인 품질과 납기 관리</span>
+      </div>
+      <div class="band-item">
+        <strong>병원 맞춤 제작</strong>
+        <span>규격·용도별 실질적 대응</span>
+      </div>
+      <div class="band-item">
+        <strong>장기 거래 신뢰</strong>
+        <span>수십 년간 이어진 거래처 관계</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <div class="container">
+      <span class="eyebrow">회사소개</span>
+      <h2>오래된 업체가 아니라,<br />오래 거래할 수 있는 업체</h2>
+      <div class="grid-2" style="margin-top: 26px;">
+        <div class="card">
           <p>
             세린종합상사는 부산에서 40년 이상 병원 린넨류를 제작·납품해오며 현장 중심의 경험을 축적해왔습니다.
             오랜 업력은 단순한 시간이 아니라, 제품의 실용성, 납품의 안정성, 거래처 대응 방식에 대한 이해의 깊이입니다.
           </p>
           <p>
-            세린은 병원 운영에 필요한 린넨류를 직접 생산하며, 병원별 사용 환경과 요구사항에 맞춘 맞춤 제작으로
-            보다 실질적인 납품 대응을 지향합니다. 지금까지 이어온 거래처와의 오랜 관계는 세린의 가장 큰 신뢰 자산입니다.
+            세린은 병원 운영에 필요한 린넨류를 직접 생산하며,
+            병원별 사용 환경과 요구사항에 맞춘 맞춤 제작으로 보다 실질적인 납품 대응을 지향합니다.
+            지금까지 이어온 거래처와의 오랜 관계는 세린의 가장 큰 신뢰 자산입니다.
           </p>
         </div>
 
         <div class="card">
           <h3>세린이 지키는 기준</h3>
-          <p><strong>안정적인 품질</strong><br />직접 생산 기반으로 제품 완성도와 품질 일관성을 관리합니다.</p>
-          <p><strong>맞춤 대응</strong><br />병원별 운영 환경과 요구사항을 반영해 실질적인 제작·납품을 진행합니다.</p>
-          <p><strong>장기적 신뢰</strong><br />한 번의 납품보다 오래 이어지는 거래 관계를 중요하게 생각합니다.</p>
-          <p><strong>현장 중심 운영</strong><br />실제 사용성과 운영 편의성을 고려한 제품 제작을 지향합니다.</p>
+          <ul>
+            <li>직접 생산 기반의 안정적인 품질 관리</li>
+            <li>병원별 사양과 운영 환경에 맞춘 맞춤 대응</li>
+            <li>한 번이 아닌 오래 가는 거래 관계 지향</li>
+            <li>현장 사용성과 운영 편의성을 고려한 제작</li>
+          </ul>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="strength" class="section" style="background:#f1f5f9;">
-      <div class="container">
-        <span class="eyebrow">세린의 강점</span>
-        <h2>세린의 경쟁력은 과장이 아니라<br />오랜 운영과 거래가 증명합니다</h2>
+  <section id="strength" class="section" style="background:#fff;">
+    <div class="container">
+      <span class="eyebrow">세린의 강점</span>
+      <h2>세린의 경쟁력은 과장이 아니라<br />오랜 운영과 거래가 증명합니다</h2>
 
-        <div class="grid-2" style="margin-top: 28px;">
-          <article class="card">
-            <div class="icon">01</div>
-            <h3>40년 이상 축적된 제작 경험</h3>
-            <p>
-              세린은 부산에서 40년 이상 병원 린넨류를 제작·납품해오며 현장 중심의 제작 경험을 축적해왔습니다.
-              오랜 업력은 제품과 납품의 기본을 꾸준히 지켜온 시간입니다.
-            </p>
-          </article>
-
-          <article class="card">
-            <div class="icon">02</div>
-            <h3>전 공정 직접 생산</h3>
-            <p>
-              외주 의존이 아닌 직접 제작 시스템을 바탕으로 제품의 완성도와 품질 일관성을 관리합니다.
-              병원 린넨류에 필요한 내구성과 실용성, 납기 안정성을 직접 생산 기반으로 대응합니다.
-            </p>
-          </article>
-
-          <article class="card">
-            <div class="icon">03</div>
-            <h3>병원별 사양에 맞춘 맞춤 제작</h3>
-            <p>
-              병원마다 사용하는 규격과 운영 방식, 필요 사양은 다릅니다.
-              세린은 모든 린넨 제작류를 병원별 사양과 사용 환경에 맞춰 보다 실질적으로 맞춤 제작할 수 있습니다.
-            </p>
-          </article>
-
-          <article class="card">
-            <div class="icon">04</div>
-            <h3>수십 년간 이어진 거래 신뢰</h3>
-            <p>
-              현재 거래처들과 장기간 거래를 이어오고 있다는 점은 세린의 가장 큰 신뢰 자산입니다.
-              단기 납품이 아니라, 오랜 기간 안정적으로 거래할 수 있는 파트너십을 지향합니다.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="products" class="section">
-      <div class="container grid-2">
-        <div>
-          <span class="eyebrow">납품 가능 품목</span>
-          <h2>병원 운영에 필요한<br />린넨류 및 관련 품목을 직접 제작·납품합니다</h2>
+      <div class="grid-4" style="margin-top: 28px;">
+        <div class="card">
+          <div class="icon">01</div>
+          <h3>40년 이상 축적된 제작 경험</h3>
           <p>
-            세린은 병원과 의료기관에서 실제로 사용되는 품목을 중심으로 직접 제작·납품합니다.
-            특히 모든 린넨 제작류는 병원별 사양과 사용 환경에 맞춘 맞춤 제작이 가능하여,
-            규격과 용도에 맞는 보다 실질적인 공급 대응을 진행합니다.
+            세린은 부산에서 40년 이상 병원 린넨류를 제작·납품해오며 현장 중심의 제작 경험을 축적해왔습니다.
+            오랜 업력은 제품과 납품의 기본을 꾸준히 지켜온 시간입니다.
           </p>
         </div>
 
         <div class="card">
-          <h3>납품 가능 기관</h3>
-          <p>세린은 다음과 같은 의료기관 및 관련 시설에 맞춘 납품 상담이 가능합니다.</p>
-          <ul style="margin:18px 0 0; padding-left: 18px; color: var(--muted);">
-            <li>종합병원 및 병원</li>
-            <li>의원 및 전문 클리닉</li>
-            <li>요양병원</li>
-            <li>재활·요양 시설</li>
-            <li>검진센터 및 관련 의료시설</li>
-          </ul>
+          <div class="icon">02</div>
+          <h3>전 공정 직접 생산</h3>
+          <p>
+            외주 의존이 아닌 직접 제작 시스템을 바탕으로 제품의 완성도와 품질 일관성을 관리합니다.
+            병원 린넨류에 필요한 내구성과 실용성, 납기 안정성을 직접 생산 기반으로 대응합니다.
+          </p>
+        </div>
 
-          <div class="notice">
-            ※ 모든 린넨 제작류는 병원별 규격, 용도, 사용 환경에 맞춰 상담 후 맞춤 제작 가능합니다.
-          </div>
+        <div class="card">
+          <div class="icon">03</div>
+          <h3>병원별 사양에 맞춘 맞춤 제작</h3>
+          <p>
+            병원마다 사용하는 규격과 운영 방식, 필요 사양은 다릅니다.
+            세린은 모든 린넨 제작류를 병원별 사양과 사용 환경에 맞춰 보다 실질적으로 맞춤 제작할 수 있습니다.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">04</div>
+          <h3>수십 년간 이어진 거래 신뢰</h3>
+          <p>
+            현재 거래처들과 장기간 거래를 이어오고 있다는 점은 세린의 가장 큰 신뢰 자산입니다.
+            단기 납품이 아니라, 오랜 기간 안정적으로 거래할 수 있는 파트너십을 지향합니다.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="products" class="section">
+    <div class="container">
+      <span class="eyebrow">납품 가능 품목</span>
+      <h2>병원 운영에 필요한<br />린넨류 및 관련 품목을 직접 제작·납품합니다</h2>
+      <p style="margin-top: 16px;">
+        세린은 병원과 의료기관에서 실제로 사용되는 품목을 중심으로 직접 제작·납품합니다.
+        특히 <strong>모든 린넨 제작류는 병원별 사양과 사용 환경에 맞춘 맞춤 제작이 가능</strong>하여,
+        규격과 용도에 맞는 보다 실질적인 공급 대응을 진행합니다.
+      </p>
+
+      <div class="product-category">
+        <h3>납품 가능 기관</h3>
+        <p>세린은 다음과 같은 의료기관 및 관련 시설에 맞춘 납품 상담이 가능합니다.</p>
+        <div class="product-tags">
+          <span class="tag">종합병원 및 병원</span>
+          <span class="tag">의원 및 전문 클리닉</span>
+          <span class="tag">요양병원</span>
+          <span class="tag">재활·요양 시설</span>
+          <span class="tag">검진센터 및 관련 의료시설</span>
         </div>
       </div>
 
-      <div class="container" style="margin-top: 26px;">
-        <div class="product-category">
-          <h3>환의 및 의료복류</h3>
-          <p>환자용·진료용·수술용 의복류를 병원별 사양과 용도에 맞춰 제작·납품합니다.</p>
-          <div class="product-tags">
-            <span class="tag">환자복 일체</span>
-            <span class="tag">수술복</span>
-            <span class="tag">검진복</span>
-            <span class="tag">수술가운</span>
-            <span class="tag">원피스</span>
-            <span class="tag">수술환의</span>
-            <span class="tag">내시경바지</span>
-            <span class="tag">기타 복류</span>
-          </div>
-        </div>
-
-        <div class="product-category">
-          <h3>침구 및 병실 린넨류</h3>
-          <p>병실 운영에 필요한 기본 침구류와 병원용 린넨류를 제작·공급합니다.</p>
-          <div class="product-tags">
-            <span class="tag">이불</span>
-            <span class="tag">시트</span>
-            <span class="tag">반시트</span>
-            <span class="tag">베개피</span>
-            <span class="tag">레자베개</span>
-          </div>
-        </div>
-
-        <div class="product-category">
-          <h3>수술·처치용 린넨류</h3>
-          <p>수술 및 처치 과정에 필요한 린넨류를 병원별 용도에 맞춰 제작·납품합니다.</p>
-          <div class="product-tags">
-            <span class="tag">수술포</span>
-            <span class="tag">기구포</span>
-          </div>
-        </div>
-
-        <div class="product-category">
-          <h3>보호대 및 보조용품</h3>
-          <p>환자 보호와 보조 목적에 맞는 다양한 품목을 병원별 필요에 따라 공급합니다.</p>
-          <div class="product-tags">
-            <span class="tag">팔걸이</span>
-            <span class="tag">복대</span>
-            <span class="tag">벨포밴드</span>
-            <span class="tag">쇄골밴드(팔자붕대)</span>
-            <span class="tag">엘보밴드</span>
-            <span class="tag">발목보호대</span>
-            <span class="tag">손목보호대</span>
-            <span class="tag">무릎보호대</span>
-            <span class="tag">체스트밴드</span>
-            <span class="tag">캐스트슈즈</span>
-            <span class="tag">소프트칼라</span>
-            <span class="tag">요통대</span>
-            <span class="tag">코르셋</span>
-          </div>
+      <div class="product-category">
+        <h3>환의 및 의료복류</h3>
+        <p>환자용·진료용·수술용 의복류를 병원별 사양과 용도에 맞춰 제작·납품합니다.</p>
+        <div class="product-tags">
+          <span class="tag">환자복 일체</span>
+          <span class="tag">수술복</span>
+          <span class="tag">검진복</span>
+          <span class="tag">트임환의</span>
+          <span class="tag">수술가운</span>
+          <span class="tag">원피스</span>
+          <span class="tag">수술환의</span>
+          <span class="tag">내시경바지</span>
+          <span class="tag">기타 복류</span>
         </div>
       </div>
-    </section>
 
-    <section id="facility" class="section" style="background:#f8fafc;">
-      <div class="container">
-        <span class="eyebrow">생산 환경</span>
-        <h2>직접 보고, 직접 만들고,<br />직접 관리합니다</h2>
-        <p>
-          세린은 생산과 원단 관리를 직접 운영하며, 병원별 사양에 맞는 린넨 제작을 보다 안정적으로 대응합니다.
-          직접 생산 기반은 품질 일관성, 제작 대응력, 납기 관리의 중요한 바탕입니다.
+      <div class="product-category">
+        <h3>침구 및 병실 린넨류</h3>
+        <p>병실 운영에 필요한 기본 침구류와 병원용 린넨류를 제작·공급합니다.</p>
+        <div class="product-tags">
+          <span class="tag">이불</span>
+          <span class="tag">시트</span>
+          <span class="tag">반시트</span>
+          <span class="tag">베개피</span>
+          <span class="tag">레자베개</span>
+        </div>
+      </div>
+
+      <div class="product-category">
+        <h3>수술·처치용 린넨류</h3>
+        <p>수술 및 처치 과정에 필요한 린넨류를 병원별 용도에 맞춰 제작·납품합니다.</p>
+        <div class="product-tags">
+          <span class="tag">수술포</span>
+          <span class="tag">고무포</span>
+          <span class="tag">기구포</span>
+        </div>
+      </div>
+
+      <div class="product-category">
+        <h3>보호대 및 보조용품</h3>
+        <p>환자 보호와 보조 목적에 맞는 다양한 품목을 병원별 필요에 따라 공급합니다.</p>
+        <div class="product-tags">
+          <span class="tag">팔걸이</span>
+          <span class="tag">복대</span>
+          <span class="tag">벨포밴드</span>
+          <span class="tag">쇄골밴드</span>
+          <span class="tag">발목보호대</span>
+          <span class="tag">손목보호대</span>
+          <span class="tag">무릎보호대</span>
+          <span class="tag">체스트밴드</span>
+          <span class="tag">캐스트슈즈</span>
+          <span class="tag">소프트칼라</span>
+          <span class="tag">코르셋</span>
+          <span class="tag">기타 밴드류</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="facility" class="section" style="background:#fff;">
+    <div class="container">
+      <span class="eyebrow">생산 환경</span>
+      <h2>직접 보고, 직접 만들고,<br />직접 관리합니다</h2>
+      <p style="margin-top: 16px;">
+        세린은 생산과 원단 관리를 직접 운영하며, 병원별 사양에 맞는 린넨 제작을 보다 안정적으로 대응합니다.
+        직접 생산 기반은 품질 일관성, 제작 대응력, 납기 관리의 중요한 바탕입니다.
+      </p>
+
+      <div class="facility-grid">
+        <div class="facility-photo-card">
+          <img
+            class="facility-photo-large"
+            src="https://www.genspark.ai/api/files/s/sZbIR7wR"
+            alt="세린종합상사 원단 보관 및 작업 공간 전경"
+          />
+          <p class="facility-caption">
+            다양한 원단과 작업 공간을 직접 관리하며 병원별 제작 대응을 진행합니다.
+          </p>
+        </div>
+
+        <div class="facility-photo-card">
+          <img
+            class="facility-photo-small"
+            src="https://www.genspark.ai/api/files/s/idG6XkBd"
+            alt="세린종합상사 원단 및 린넨 소재 보관 모습"
+          />
+          <p class="facility-caption">
+            다양한 린넨 원단과 소재를 직접 보관·관리하며, 병원별 사양과 용도에 맞춘 제작 대응을 진행합니다.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <span class="eyebrow">진행 방식</span>
+      <h2>상담부터 제작·납품까지<br />실무적으로 진행합니다</h2>
+
+      <div class="step-wrap">
+        <div class="step">
+          <div class="step-no">01</div>
+          <h3>요구사항 확인</h3>
+          <p>사용 목적, 규격, 수량, 운영 환경 등 기본 조건을 확인합니다.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-no">02</div>
+          <h3>맞춤 제작 상담</h3>
+          <p>병원별 사양과 필요에 맞춘 품목 및 제작 방향을 협의합니다.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-no">03</div>
+          <h3>직접 생산 진행</h3>
+          <p>전 공정 직접 생산 기반으로 품질과 납기 일정을 관리합니다.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-no">04</div>
+          <h3>안정적 납품 대응</h3>
+          <p>일회성 납품이 아닌 장기 거래를 고려한 대응을 지향합니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="cta">
+        <span class="eyebrow" style="background: rgba(255,255,255,0.12); color:#fff;">문의 안내</span>
+        <h2>병원별 사양에 맞는 린넨 제작·납품을 찾고 계신가요?</h2>
+        <p style="margin-top: 14px;">
+          세린종합상사는 오랜 경험과 직접 생산 기반을 바탕으로,
+          의료기관별 요구에 맞는 실질적인 제작·납품 상담을 진행합니다.
         </p>
 
-        <div class="facility-grid">
-          <div class="facility-photo-card">
-            <img
-              class="facility-photo-large"
-              src="https://www.genspark.ai/api/files/s/sZbIR7wR"
-              alt="세린종합상사 원단 보관 및 작업 공간 전경"
-            />
-            <p class="facility-caption">
-              다양한 원단과 작업 공간을 직접 관리하며 병원별 제작 대응을 진행합니다.
-            </p>
-          </div>
-
-          <div class="facility-photo-card">
-            <img
-              class="facility-photo-small"
-              src="https://www.genspark.ai/api/files/s/idG6XkBd"
-              alt="세린종합상사 원단 및 린넨 소재 보관 모습"
-            />
-            <p class="facility-caption">
-              다양한 린넨 원단과 소재를 직접 보관·관리하며, 병원별 사양과 용도에 맞춘 제작 대응을 진행합니다.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="process" class="section">
-      <div class="container">
-        <span class="eyebrow">진행 방식</span>
-        <h2>상담부터 제작·납품까지<br />실무적으로 진행합니다</h2>
-
-        <div class="step-wrap">
-          <div class="step">
-            <div class="step-no">01</div>
-            <h3>요구사항 확인</h3>
-            <p>사용 목적, 규격, 수량, 운영 환경 등 기본 조건을 확인합니다.</p>
-          </div>
-
-          <div class="step">
-            <div class="step-no">02</div>
-            <h3>맞춤 제작 상담</h3>
-            <p>병원별 사양과 필요에 맞춘 품목 및 제작 방향을 협의합니다.</p>
-          </div>
-
-          <div class="step">
-            <div class="step-no">03</div>
-            <h3>직접 생산 진행</h3>
-            <p>전 공정 직접 생산 기반으로 품질과 납기 일정을 관리합니다.</p>
-          </div>
-
-          <div class="step">
-            <div class="step-no">04</div>
-            <h3>안정적 납품 대응</h3>
-            <p>일회성 납품이 아닌 장기 거래를 고려한 대응을 지향합니다.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-sm">
-      <div class="container">
-        <div class="cta">
-          <span class="eyebrow" style="background: rgba(255,255,255,0.12); color: #fff;">문의 안내</span>
-          <h2 style="color:#fff;">병원별 사양에 맞는 린넨 제작·납품을 찾고 계신가요?</h2>
-          <p>
-            세린종합상사는 오랜 경험과 직접 생산 기반을 바탕으로,
-            의료기관별 요구에 맞는 실질적인 제작·납품 상담을 진행합니다.
-          </p>
-          <div class="btn-group">
-            <a href="#contact" class="btn btn-primary">문의 정보 보기</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="section">
-      <div class="container contact-grid">
-        <div class="contact-card">
-          <span class="eyebrow">문의하기</span>
-          <h2>상담 및 문의</h2>
-          <p>
-            아래 연락처로 문의해주시면 확인 후 안내드리겠습니다.
-            필요 품목, 수량, 규격, 사용 목적 등을 함께 알려주시면 보다 정확한 상담이 가능합니다.
-            모든 린넨 제작류는 병원별 사양과 사용 환경에 맞춘 맞춤 제작 상담이 가능합니다.
-          </p>
-
-          <div class="contact-list">
-            <div class="contact-item">
+        <div class="contact-list">
+          <div class="contact-item">
+            <div>📞</div>
+            <div>
               <strong>전화</strong>
               <span>051-747-3511 / 051-747-3512</span>
             </div>
-            <div class="contact-item">
+          </div>
+
+          <div class="contact-item">
+            <div>📠</div>
+            <div>
               <strong>팩스</strong>
               <span>051-747-3513</span>
             </div>
-            <div class="contact-item">
+          </div>
+
+          <div class="contact-item">
+            <div>✉️</div>
+            <div>
               <strong>이메일</strong>
               <a href="mailto:kmj173@naver.com">kmj173@naver.com</a>
             </div>
-            <div class="contact-item">
+          </div>
+
+          <div class="contact-item">
+            <div>📍</div>
+            <div>
               <strong>주소</strong>
               <span>부산광역시 기장군 기장읍 내리1길 12</span>
             </div>
           </div>
-
-          <div class="btn-group">
-            <a class="btn btn-dark" href="tel:0517473511">전화 051-747-3511</a>
-            <a class="btn btn-dark" href="mailto:kmj173@naver.com">이메일 문의</a>
-          </div>
         </div>
 
-        <div class="contact-card">
-          <h3>문의 시 함께 알려주시면 좋습니다</h3>
-          <ul style="margin:18px 0 0; padding-left: 18px; color: var(--muted);">
-            <li>의료기관 유형 및 사용 부서</li>
-            <li>필요 품목과 대략적인 수량</li>
-            <li>규격 또는 현재 사용 중인 사양</li>
-            <li>병원별 맞춤 제작 필요 여부</li>
-            <li>희망 납기 및 납품 조건</li>
-          </ul>
-
-          <div class="notice">
-            병원별 규격과 사용 환경에 따라 린넨 제작류 맞춤 제작 및 공급 상담이 가능합니다.
-          </div>
-
-          <div class="notice">
-            현재는 네이버 메일을 사용해도 되지만, 추후 대외 신뢰 강화를 위해
-            <strong>도메인 이메일</strong> 사용도 검토해보시는 것을 권장합니다.
-          </div>
+        <div class="btn-group" style="margin-top: 28px;">
+          <a class="btn btn-primary" href="tel:0517473511">전화 문의</a>
+          <a class="btn btn-secondary" href="mailto:kmj173@naver.com">이메일 문의</a>
         </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
   <footer class="footer">
-    <div class="container footer-inner">
-      <div>
-        <strong style="color:#334155;">세린종합상사</strong><br />
-        병원 린넨류 전문 제작·납품
+    <div class="container">
+      <div style="font-weight:700; color:#334155; margin-bottom:6px;">세린종합상사</div>
+      <div>병원 린넨류 전문 제작·납품</div>
+      <div style="margin-top:6px;">
+        부산광역시 기장군 기장읍 내리1길 12 | 전화 051-747-3511 / 3512 | 팩스 051-747-3513
       </div>
-      <div>
-        © <span id="year"></span> SERIN. All rights reserved.
+      <div style="margin-top:6px;">
+        이메일 <a href="mailto:kmj173@naver.com">kmj173@naver.com</a>
       </div>
     </div>
   </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
