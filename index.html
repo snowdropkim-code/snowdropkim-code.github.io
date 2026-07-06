@@ -6,7 +6,538 @@
   <title>세린종합상사 | 병원 린넨 및 환자복 전문 제조 공급</title>
   <meta
     name="description"
+    content="40년 전통의 병원 린넨 전문 기업 세린종합상사. 국내 자체 공장 생산 <!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>세린종합상사 | 병원 린넨 및 환자복 전문 제조 공급</title>
+  <meta
+    name="description"
     content="40년 전통의 병원 린넨 전문 기업 세린종합상사. 국내 자체 공장 생산 인프라와 정확한 방문 실측을 바탕으로 환자복, 침구류를 안정적으로 직공급합니다."
+  />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0f172a" />
+  <link rel="canonical" href="https://www.serinlinen.com" />
+
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --surface-sub: #f1f5f9;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --primary: #0f1e36;
+      --accent: #0284c7;
+      --accent-light: #f0f9ff;
+      --border: #cbd5e1;
+      --radius: 6px;
+      --max-width: 1100px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+      letter-spacing: -0.02em;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; height: auto; }
+
+    .container {
+      width: 100%;
+      padding-left: 20px;
+      padding-right: 20px;
+      margin: 0 auto;
+    }
+
+    .section { padding: 48px 0; }
+    .section-white { background: var(--surface); border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0; }
+
+    h1, h2, h3, h4 {
+      margin: 0 0 12px;
+      font-weight: 700;
+      color: var(--primary);
+      word-break: keep-all;
+    }
+
+    h1 { font-size: 1.8rem; line-height: 1.35; }
+    h2 { font-size: 1.45rem; }
+    h3 { font-size: 1.2rem; }
+    h4 { font-size: 1.05rem; margin-bottom: 8px; }
+
+    .section-title-wrap { margin-bottom: 28px; }
+    .section-title-wrap p { font-size: 0.95rem; color: var(--text-muted); margin: 0; word-break: keep-all; }
+
+    p { margin: 0 0 12px; color: var(--text-muted); word-break: keep-all; }
+    ul { margin: 0; padding-left: 20px; }
+
+    .btn-wrap { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 20px;
+      border-radius: var(--radius);
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      text-align: center;
+    }
+    .btn-fill { background: var(--primary); color: #fff; }
+    .btn-stroke { border: 1px solid var(--primary); color: var(--primary); }
+
+    /* 헤더 (모바일 기준 우선 스타일링) */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.95);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(8px);
+    }
+    .header-box { display: flex; flex-direction: column; align-items: center; padding: 12px 20px; gap: 10px; }
+    .logo-area { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 2px; }
+    .logo-title { font-weight: 800; font-size: 1.2rem; color: var(--primary); }
+    .logo-sub { font-size: 0.75rem; color: var(--text-muted); padding-left: 0; border-left: none; }
+    .nav-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 16px; }
+    .nav-links a { font-size: 0.85rem; color: var(--text-main); font-weight: 600; }
+
+    /* 히어로 섹션 */
+    .hero-section { background: var(--surface); border-bottom: 1px solid var(--border); padding: 36px 0; }
+    .hero-box { display: flex; flex-direction: column-reverse; gap: 28px; }
+    .hero-desc { font-size: 0.95rem; color: var(--text-muted); line-height: 1.6; }
+    .hero-img-box { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); width: 100%; }
+    .hero-img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+
+    /* B2B 지표 */
+    .indicator-band { background: var(--primary); color: #ffffff; padding: 24px 0; }
+    .indicator-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+    .indicator-card { border-left: 3px solid var(--accent); padding-left: 14px; }
+    .indicator-card h4 { color: #ffffff; font-size: 1.3rem; margin: 0 0 2px; }
+    .indicator-card span { font-size: 0.85rem; color: #94a3b8; }
+
+    /* 기본 모바일 다단 구조 (전부 세로 1열) */
+    .grid-col-2 { display: grid; grid-template-columns: 1fr; gap: 16px; }
+
+    /* 기업형 카드 및 공정 사진 세트 */
+    .b2b-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; }
+    .b2b-card h3 { color: var(--primary); margin-bottom: 12px; border-left: 3px solid var(--accent); padding-left: 8px; }
+    
+    .gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 16px; }
+    .gallery-item { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+    .gallery-item img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+
+    /* 납품 품목 구조 */
+    .catalog-wrapper { display: grid; gap: 16px; }
+    .catalog-row { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; display: flex; flex-direction: column; gap: 14px; }
+    .catalog-row h3 { margin-bottom: 0; padding-bottom: 4px; border-bottom: 1px solid var(--surface-sub); }
+    .catalog-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+    .chip { background: var(--surface-sub); border: 1px solid var(--border); padding: 5px 10px; border-radius: 4px; font-size: 0.85rem; color: var(--text-main); font-weight: 600; }
+
+    /* 계약 절차 */
+    .flow-grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+    .flow-card { background: var(--surface); border: 1px solid var(--border); padding: 16px; border-radius: var(--radius); }
+    .flow-step { font-size: 0.8rem; font-weight: 700; color: var(--accent); margin-bottom: 2px; }
+
+    /* FAQ 시스템 */
+    .faq-layout { display: grid; gap: 10px; }
+    .faq-node { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; }
+    .faq-q { font-weight: 700; color: var(--primary); margin-bottom: 6px; font-size: 0.95rem; word-break: keep-all; }
+    .faq-a { color: var(--text-muted); font-size: 0.9rem; border-top: 1px dashed var(--border); padding-top: 6px; margin-top: 6px; word-break: keep-all; }
+
+    /* 오더 데스크 */
+    .inquiry-board { background: var(--primary); color: #ffffff; border-radius: var(--radius); padding: 24px; }
+    .inquiry-grid { display: flex; flex-direction: column; gap: 24px; }
+    .info-block-list { display: grid; gap: 10px; }
+    .info-block-card { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 4px; padding: 12px; }
+    .info-block-card label { display: block; font-size: 0.7rem; color: #94a3b8; margin-bottom: 2px; }
+    .info-block-card span, .info-block-card a { font-size: 0.95rem; font-weight: 700; color: #ffffff; word-break: break-all; }
+    .guide-slate { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); padding: 16px; border-radius: 4px; }
+    .guide-slate ul { padding-left: 14px; }
+
+    /* 푸터 */
+    .footer-corporate { background: #0f172a; color: #94a3b8; padding: 32px 0 24px; font-size: 0.8rem; border-top: 1px solid #1e293b; }
+    .footer-main-layout { display: flex; flex-direction: column; gap: 20px; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #1e293b; }
+    .footer-brand { font-size: 1rem; font-weight: 700; color: #f1f5f9; margin-bottom: 8px; }
+    .footer-bottom { display: flex; flex-direction: column; gap: 8px; }
+
+    /* ──────────────────────────────────────────
+       태블릿 및 데스크톱 모니터 최적화 (태블릿 이상 해상도 대응)
+       ────────────────────────────────────────── */
+    @media (min-width: 768px) {
+      .container { width: min(var(--max-width), calc(100% - 48px)); padding-left: 0; padding-right: 0; }
+      .section { padding: 80px 0; }
+      h1 { font-size: 2.3rem; }
+      h2 { font-size: 1.8rem; }
+      h3 { font-size: 1.25rem; }
+      
+      /* 헤더 PC 가로 배치 */
+      .header-box { flex-direction: row; justify-content: space-between; min-height: 70px; padding: 0; }
+      .logo-area { flex-direction: row; gap: 12px; text-align: left; }
+      .logo-title { font-size: 1.25rem; }
+      .logo-sub { border-left: 1px solid var(--border); padding-left: 12px; font-size: 0.8rem; }
+      .nav-links { gap: 24px; }
+      .nav-links a { font-size: 0.9rem; }
+
+      /* 히어로 PC 전환 */
+      .hero-section { padding: 70px 0; }
+      .hero-box { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center; }
+      .btn-wrap { flex-direction: row; gap: 12px; }
+
+      /* 메인 인디케이터 */
+      .indicator-grid { grid-template-columns: repeat(4, 1fr); gap: 24px; }
+
+      /* 레이아웃 분할 가로 배치 */
+      .grid-col-2 { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+      .gallery-grid { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+      
+      /* 품목 분류 분할 배치 */
+      .catalog-row { grid-template-columns: 0.25fr 0.75fr; gap: 32px; flex-direction: row; align-items: start; }
+      
+      /* 진행절차 / 문의처 가로 배치 */
+      .flow-grid { grid-template-columns: repeat(4, 1fr); gap: 16px; }
+      .inquiry-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; }
+      .footer-main-layout { flex-direction: row; justify-content: space-between; }
+      .footer-bottom { flex-direction: row; justify-content: space-between; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 상단 네비게이션 -->
+  <header class="header">
+    <div class="container header-box">
+      <div class="logo-area">
+        <span class="logo-title">세린종합상사</span>
+        <span class="logo-sub">병원 린넨 제조·공급 파트너</span>
+      </div>
+      <nav class="nav-links">
+        <a href="#about">회사 소개</a>
+        <a href="#fabric">원단 시스템</a>
+        <a href="#facility">생산 공정</a>
+        <a href="#products">납품 품목</a>
+        <a href="#process">거래 절차</a>
+        <a href="#faq">주요 문의</a>
+        <a href="#contact" style="color:var(--accent);">조달 문의</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 히어로 섹션 -->
+  <section class="hero-section">
+    <div class="container hero-box">
+      <div>
+        <h1>병원 전용 린넨 및 환자복<br />자체 공장 직공급 시스템</h1>
+        <p class="hero-desc">
+          세린종합상사는 중간 유통 과정 없이 원단 재단부터 완제품 봉제까지 국내 자체 공장에서 직접 생산하여 전국 의료기관 및 요양원에 직공급하고 있습니다. 40년 제조 경험을 바탕으로 안정적인 조달을 약속합니다.
+        </p>
+        <div class="btn-wrap">
+          <a href="#contact" class="btn btn-fill">대량 조달 및 상담 문의</a>
+          <a href="#products" class="btn btn-stroke">공급 품목 보기</a>
+        </div>
+      </div>
+      <div class="hero-img-box">
+        <img class="hero-img" src="./images/work5.png" alt="세린종합상사 생산 본사 전경" />
+      </div>
+    </div>
+  </section>
+
+  <!-- B2B 지표 -->
+  <section class="indicator-band">
+    <div class="container indicator-grid">
+      <div class="indicator-card">
+        <h4>40년 이상</h4>
+        <span>병원 전용 의류 제조 노하우</span>
+      </div>
+      <div class="indicator-card">
+        <h4>100%</h4>
+        <span>국내 자체 공장 직접 제조</span>
+      </div>
+      <div class="indicator-card">
+        <h4>직접 방문</h4>
+        <span>현장 맞춤 침상 및 치수 실측</span>
+      </div>
+      <div class="indicator-card">
+        <h4>공장 직판</h4>
+        <span>유통 마진 없는 합리적 단가</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 회사 소개 및 거래처가 신뢰하는 이유 -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="grid-col-2">
+        <div class="b2b-card">
+          <h3>회사 소개</h3>
+          <p>
+            세린종합상사는 40년 이상 병원 전용 의류 및 메디컬 린넨 제품만을 전문적으로 연구하고 개발해 온 제조 전문 기업입니다. 
+          </p>
+          <p style="margin: 0;">
+            기획 및 원단 선별부터 재단, 재봉, 검수 등 생산 전 공정을 하청 없이 100% 국내 자체 공장에서 원스톱으로 처리하는 인하우스 인프라를 구축하고 있습니다. 엄격한 제조 매뉴얼을 바탕으로 전국 종합병원 및 요양 시설에 검증된 품질의 완제품을 적기에 조달하고 있습니다.
+          </p>
+        </div>
+        <div class="b2b-card">
+          <h3>거래처가 신뢰하는 이유</h3>
+          <p>
+            의료 환경에 부합하는 철저한 규격 관리와 규격화된 정밀 재단을 고수하여 제품 편차가 없고, 대형 상업용 세탁 건조에도 형태 변형이 적어 경제성이 우수합니다.
+          </p>
+          <p style="margin: 0;">
+            단순 수주 방식에 그치지 않고, 담당 실무자가 현장을 직접 방문하여 침상 치수 및 사용 환경을 원스텝으로 실측·진단한 후 최적의 시안을 제안합니다. 공급 이후 발생할 수 있는 품질 요청 사항에도 제조사가 직접 책임 대응하므로 전국의 수많은 중대형 의료기관이 신뢰하고 오랜 기간 거래 관계를 유지하고 있습니다.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 원단 안내 -->
+  <section id="fabric" class="section section-white">
+    <div class="container">
+      <div class="grid-col-2" style="align-items: center;">
+        <div>
+          <h2>40년 이상 경험으로 검증된 원단 선택</h2>
+          <p style="font-size: 1.05rem; margin: 0;">
+            세린종합상사는 수십 년간 수많은 의료기관에 납품하며 축적된 현장 피드백을 바탕으로, 병원 세탁 환경에서 대형 건조기와 고온 살균을 거쳐도 뒤틀림이 적고 환자분들이 장시간 착용 시에도 피부 자극이 없는 가장 최적화된 원단만을 선별하여 사용합니다.
+          </p>
+        </div>
+        <div style="background: var(--surface-sub); border: 1px solid var(--border); padding: 24px; border-radius: var(--radius); text-align: center;">
+          <h3 style="margin: 0 0 8px; color: var(--accent);">소재 선정 기준</h3>
+          <p style="margin: 0; font-size: 0.95rem; font-weight: 600;">잦은 세탁에 강한 수축 방지 · 통기성이 좋은 안심 면 혼방 원사</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 생산 공정 -->
+  <section id="facility" class="section">
+    <div class="container">
+      <div class="section-title-wrap">
+        <h2>체계적인 제조 인프라</h2>
+        <p>엄격한 생산 관리에 따라 운영되는 당사의 제조 가동 현장입니다.</p>
+      </div>
+      
+      <div class="gallery-grid">
+        <div class="gallery-item"><img src="./images/work1.png" alt="세린종합상사 생산라인" /></div>
+        <div class="gallery-item"><img src="./images/work2.png" alt="세린종합상사 생산라인" /></div>
+        <div class="gallery-item"><img src="./images/work3.png" alt="세린종합상사 생산라인" /></div>
+        <div class="gallery-item"><img src="./images/work4.png" alt="세린종합상사 생산라인" /></div>
+        <div class="gallery-item"><img src="./images/work6.png" alt="세린종합상사 생산라인" /></div>
+        <div class="gallery-item"><img src="./images/work7.png" alt="세린종합상사 생산라인" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 납품 품목 안내 -->
+  <section id="products" class="section section-white">
+    <div class="container">
+      <div class="section-title-wrap">
+        <h2>납품 품목 안내</h2>
+        <p>세린종합상사에서 공급하는 규격 품목 및 조달 대상 리스트입니다.</p>
+      </div>
+
+      <div class="catalog-wrapper">
+        <!-- 납품 가능 기관 -->
+        <div class="catalog-row">
+          <h3>납품 가능 기관</h3>
+          <div class="catalog-chips">
+            <span class="chip">종합병원 및 병원의원 및 전문 클리닉</span>
+            <span class="chip">요양병원</span>
+            <span class="chip">재활·요양 시설</span>
+            <span class="chip">검진센터 및 관련 의료시설</span>
+          </div>
+        </div>
+
+        <!-- 환의 및 의료복류 -->
+        <div class="catalog-row">
+          <h3>환의 및 의료복류</h3>
+          <div class="catalog-chips">
+            <span class="chip">환자복 일체</span>
+            <span class="chip">수술복</span>
+            <span class="chip">검진복</span>
+            <span class="chip">수술가운</span>
+            <span class="chip">원피스수술환의</span>
+            <span class="chip">내시경바지</span>
+            <span class="chip">기타 복류</span>
+          </div>
+        </div>
+
+        <!-- 침구 및 병실 린넨류 -->
+        <div class="catalog-row">
+          <h3>침구 및 병실 린넨류</h3>
+          <div class="catalog-chips">
+            <span class="chip">이불</span>
+            <span class="chip">시트</span>
+            <span class="chip">반시트</span>
+            <span class="chip">베개피</span>
+            <span class="chip">레자베개</span>
+          </div>
+        </div>
+
+        <!-- 수술 처치용 린넨류 -->
+        <div class="catalog-row">
+          <h3>수술·처치용 린넨류</h3>
+          <div class="catalog-chips">
+            <span class="chip">수술포</span>
+            <span class="chip">기구포</span>
+          </div>
+        </div>
+
+        <!-- 보호대 및 보조용품 -->
+        <div class="catalog-row">
+          <h3>보호대 및 보조용품</h3>
+          <div class="catalog-chips">
+            <span class="chip">팔걸이</span>
+            <span class="chip">복대</span>
+            <span class="chip">벨포밴드</span>
+            <span class="chip">쇄골밴드</span>
+            <span class="chip">발목보호대</span>
+            <span class="chip">손목보호대</span>
+            <span class="chip">무릎보호대</span>
+            <span class="chip">체스트밴드</span>
+            <span class="chip">캐스트슈즈</span>
+            <span class="chip">소프트칼라</span>
+            <span class="chip">코르셋</span>
+            <span class="chip">기타 밴드류</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 진행 절차 -->
+  <section id="process" class="section">
+    <div class="container">
+      <div class="section-title-wrap">
+        <h2>주문 및 계약 절차</h2>
+      </div>
+      <div class="flow-grid">
+        <div class="flow-card">
+          <div class="flow-step">01</div>
+          <h3>상담 접수</h3>
+          <p>품목 및 예상 수량 기반 1차 유선 안내를 진행합니다.</p>
+        </div>
+        <div class="flow-card" style="border-color: var(--accent); background: var(--accent-light);">
+          <div class="flow-step">02</div>
+          <h3>방문 실측 및 샘플 확인</h3>
+          <p>담당자가 병원을 직접 방문하여 치수 실측 및 원단을 확인합니다.</p>
+        </div>
+        <div class="flow-card">
+          <div class="flow-step">03</div>
+          <h3>견적 및 계약</h3>
+          <p>공장 직판가 기준 견적을 산출하고 최종 계약을 체결합니다.</p>
+        </div>
+        <div class="flow-card">
+          <div class="flow-step">04</div>
+          <h3>자체 생산 및 납품</h3>
+          <p>공장 직접 생산 후 지정 기일에 맞춰 안전하게 직배송합니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 자주 묻는 질문 FAQ -->
+  <section id="faq" class="section section-white">
+    <div class="container">
+      <div class="section-title-wrap">
+        <h2>자주 묻는 질문</h2>
+      </div>
+      <div class="faq-layout">
+        <div class="faq-node">
+          <div class="faq-q">Q. 부산/경남 외 다른 지역도 계약 및 납품이 가능한가요?</div>
+          <div class="faq-a">네, 가능합니다. 세린종합상사는 부산 기장을 기반으로 김해, 마산, 진주, 울산은 물론 전라도 광주 등 전국 주요 거점 의료기관에 장기 공급을 진행하고 있습니다. 언제든 문의해 주시기 바랍니다.</div>
+        </div>
+        <div class="faq-node">
+          <div class="faq-q">Q. 대량 생산 발주 전에 실물 샘플을 확인해 볼 수 있나요?</div>
+          <div class="faq-a">네, 가능합니다. 계약 및 본격 양산 전에 관계자분들이 원단 재질 및 전반적인 마감을 눈으로 직접 판단하실 수 있도록 실측 방문 상담 시 기존 포트폴리오 실물 샘플을 제공해 드립니다.</div>
+        </div>
+        <div class="faq-node">
+          <div class="faq-q">Q. 기관 고유 서체나 로고 인쇄 처리가 가능한가요?</div>
+          <div class="faq-a">네, 가능합니다. 병원의 고유 CI 마크나 지정 서체 등 원하시는 사양에 맞춰 규격화된 인쇄 또는 공법으로 깔끔하게 매칭 처리가 가능합니다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 문의처 안내 -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="inquiry-board">
+        <div class="inquiry-grid">
+          <div>
+            <h2 style="color:#ffffff; margin-bottom:16px;">조달 및 공급 계약 문의</h2>
+            <p style="color:#cbd5e1; font-size:1rem; margin-bottom:28px;">
+              안정적인 물류 공급과 투명한 원가 관리를 지원합니다. 대표 유선 회선 또는 이메일을 통해 실무 요청 사항을 전달 주시면 신속히 안내해 드리겠습니다.
+            </p>
+            <div class="info-block-list">
+              <div class="info-block-card">
+                <label>대표 유선 전화번호</label>
+                <span>051-747-3511 / 051-747-3512</span>
+              </div>
+              <div class="info-block-card">
+                <label>공식 팩스 번호 (FAX)</label>
+                <span>051-747-3513</span>
+              </div>
+              <div class="info-block-card">
+                <label>공식 이메일 주소</label>
+                <a href="mailto:made@serinlinen.com">made@serinlinen.com</a>
+              </div>
+              <div class="info-block-card">
+                <label>본사 및 공장 소재지</label>
+                <span>부산광역시 기장군 기장읍 내리1길 12</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="guide-slate">
+              <h3 style="color:#ffffff; margin-bottom:12px;">전화 상담 시 확인 사항</h3>
+              <p style="color:#94a3b8; font-size:0.85rem; margin-bottom:16px;">실시간 정확한 원가 산출과 일정 산정을 위해 유선 연락 전 아래 항목을 미리 확인 주시면 원활합니다.</p>
+              <ul style="color:#e2e8f0; font-size:0.95rem; display:grid; gap:10px; padding-left:14px;">
+                <li><strong>희망 도입 품목 카테고리</strong></li>
+                <li><strong>초도 공급 요구 수량</strong></li>
+                <li><strong>병원 기관명 및 담당 부서 연락처</strong></li>
+                <li><strong>방문 실측 가용 희망 날짜</strong></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 푸터 -->
+  <footer class="footer-corporate">
+    <div class="container">
+      <div class="footer-main-layout">
+        <div>
+          <div class="footer-brand">세린종합상사</div>
+          <p style="color:#94a3b8; margin-bottom:6px;"><strong>본사 및 공장 :</strong> 부산광역시 기장군 기장읍 내리1길 12</p>
+          <p style="color:#94a3b8; margin-bottom:6px;"><strong>대표전화 :</strong> 051-747-3511 / 051-747-3512 | <strong>FAX :</strong> 051-747-3513</p>
+          <p style="color:#94a3b8; margin-bottom:0;"><strong>이메일 :</strong> made@serinlinen.com</p>
+        </div>
+        <div>
+          <div style="font-weight:700; color:#cbd5e1; margin-bottom:10px;">물류 거점 안내</div>
+          <p style="color:#64748b; line-height:1.5; margin:0;">
+            부산 전역 공급 및 김해, 마산, 진주, 울산, 광주 등 전국 주요 거점 병원·요양원 정기 배송 인프라 연계 운영.
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 세린종합상사. All Rights Reserved.</div>
+        <div><a href="#about" style="color:#64748b;">개인정보 처리방침</a></div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>인프라와 정확한 방문 실측을 바탕으로 환자복, 침구류를 안정적으로 직공급합니다."
   />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#0f172a" />
