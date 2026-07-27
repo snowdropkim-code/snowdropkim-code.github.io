@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>제품 상세 안내 | 세린린넨</title>
+  <meta name="description" content="세린린넨의 병원 환자복 및 린넨 제품 상세 스펙 안내 페이지입니다." />
+  <meta name="robots" content="index, follow" />
+  <link class="canonical" href="https://www.serinlinen.com/product-detail.html" />
+
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --surface-sub: #f1f5f9;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --primary: #0f1e36;
+      --accent: #0284c7;
+      --accent-light: #f0f9ff;
+      --border: #cbd5e1;
+      --radius: 6px;
+      --max-width: 1100px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+      letter-spacing: -0.02em;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; height: auto; }
+
+    .container {
+      width: 100%;
+      padding-left: 20px;
+      padding-right: 20px;
+      margin: 0 auto;
+    }
+
+    .section { padding: 48px 0; }
+    .section-white { background: var(--surface); border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0; }
+
+    h1, h2, h3, h4 {
+      margin: 0 0 12px;
+      font-weight: 700;
+      color: var(--primary);
+      word-break: keep-all;
+    }
+
+    h1 { font-size: 1.8rem; line-height: 1.35; }
+    h2 { font-size: 1.45rem; }
+    h3 { font-size: 1.2rem; }
+
+    p { margin: 0 0 12px; color: var(--text-muted); word-break: keep-all; }
+
+    /* 헤더 */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.95);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(8px);
+    }
+    .header-box { display: flex; flex-direction: column; align-items: center; padding: 12px 20px; gap: 10px; }
+    .logo-area { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 2px; }
+    .logo-title { font-weight: 800; font-size: 1.2rem; color: var(--primary); }
+    .logo-sub { font-size: 0.75rem; color: var(--text-muted); }
+
+    /* 제품 상세 레이아웃 */
+    .product-detail-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+      align-items: start;
+    }
+
+    .product-img-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .product-main-img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+    }
+
+    .product-info-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+    }
+
+    .spec-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 0.9rem;
+    }
+    .spec-table th, .spec-table td {
+      border: 1px solid var(--border);
+      padding: 10px 14px;
+      text-align: left;
+    }
+    .spec-table th {
+      background: var(--surface-sub);
+      color: var(--primary);
+      width: 30%;
+    }
+    .spec-table td {
+      color: var(--text-muted);
+    }
+
+    .btn-wrap { display: flex; gap: 10px; margin-top: 24px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 20px;
+      border-radius: var(--radius);
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      text-align: center;
+      flex: 1;
+    }
+    .btn-fill { background: var(--primary); color: #fff; }
+    .btn-stroke { border: 1px solid var(--primary); color: var(--primary); background: #fff; }
+
+    /* 푸터 */
+    .footer-corporate { background: #0f172a; color: #94a3b8; padding: 32px 0 24px; font-size: 0.8rem; border-top: 1px solid #1e293b; }
+
+    @media (min-width: 768px) {
+      .container { width: min(var(--max-width), calc(100% - 48px)); padding-left: 0; padding-right: 0; }
+      .section { padding: 80px 0; }
+      h1 { font-size: 2.2rem; }
+      .header-box { flex-direction: row; justify-content: space-between; min-height: 70px; padding: 0; }
+      .logo-area { flex-direction: row; gap: 12px; text-align: left; }
+      .product-detail-layout {
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 상단 네비게이션 -->
+  <header class="header">
+    <div class="container header-box">
+      <a href="index.html" class="logo-area">
+        <span class="logo-title">세린린넨</span>
+        <span class="logo-sub">홈으로 돌아가기</span>
+      </a>
+      <nav>
+        <a href="index.html#contact" class="btn btn-fill" style="min-height: 38px; padding: 0 16px; font-size: 0.85rem;">조달 문의</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 제품 상세 본문 -->
+  <section class="section">
+    <div class="container">
+      <div class="product-detail-layout">
+        <!-- 왼쪽: 제품 이미지 -->
+        <div class="product-img-card">
+          <!-- TODO: 실제 제품 사진 파일명으로 변경해주세요 (예: images/product-patient.jpg) -->
+          <img class="product-main-img" src="./images/work1.png" alt="병원 환자복 상세 사진" />
+        </div>
+
+        <!-- 오른쪽: 제품 설명 및 스펙 -->
+        <div class="product-info-card">
+          <span style="font-size: 0.85rem; font-weight: 700; color: var(--accent);">PREMIUM MEDICAL WEAR</span>
+          <h1>환자복 상하의 세트 (고급형)</h1>
+          <p>
+            장시간 착용에도 피부 자극이 적고 세탁 변형이 적은 프리미엄 순면 혼방 원단을 사용하여 제작된 환자복입니다. 전국의 주요 병원 및 요양병원에서 가장 선호하는 표준 규격 제품입니다.
+          </p>
+
+          <table class="spec-table">
+            <tr>
+              <th>적용 대상</th>
+              <td>입원 환자, 요양 환자</td>
+            </tr>
+            <tr>
+              <th>주요 소재</th>
+              <td>면 60% + 폴리에스터 40% (C/C 튼튼한 이중직)</td>
+            </tr>
+            <tr>
+              <th>색상/규격</th>
+              <td>블루 스트라이프 / 병원별 맞춤 치수 실측 가능</td>
+            </tr>
+            <tr>
+              <th>제조 방식</th>
+              <td>100% 국내 자체 공장 직접 생산</td>
+            </tr>
+          </table>
+
+          <h3 style="font-size: 1.1rem; margin-top: 20px;">제품 특징</h3>
+          <ul style="color: var(--text-muted); padding-left: 20px; font-size: 0.95rem; margin-bottom: 20px;">
+            <li>고온 세탁 및 잦은 멸균 세탁에도 보풀과 수축 현상을 최소화했습니다.</li>
+            <li>환자의 체형에 구애받지 않도록 인체공학적 여유핏으로 설계되었습니다.</li>
+            <li>기관 고유의 로고(CI) 및 마크 인쇄(나염/자수) 커스텀이 가능합니다.</li>
+          </ul>
+
+          <div class="btn-wrap">
+            <a href="index.html#contact" class="btn btn-fill">샘플 신청 및 견적 문의</a>
+            <a href="index.html#products" class="btn btn-stroke">목록으로</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 푸터 -->
+  <footer class="footer-corporate">
+    <div class="container">
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <div style="font-weight: 700; color: #f1f5f9;">세린린넨</div>
+        <p style="margin: 0;">부산광역시 기장군 기장읍 내리1길 12 | 대표전화 : 051-747-3511</p>
+        <p style="margin: 0;">© 2026 세린린넨. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
