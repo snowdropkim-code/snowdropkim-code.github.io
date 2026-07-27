@@ -3,9 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>제품 상세 안내 | 세린린넨</title>
-  <meta name="description" content="세린린넨의 병원 환자복 및 린넨 제품 상세 스펙 안내 페이지입니다." />
+  <title>납품 품목 상세 스펙 | 세린린넨</title>
+  <meta
+    name="description"
+    content="세린린넨의 병원 전용 환자복, 검진가운, 수술복 및 린넨류 상세 품목 스펙 안내."
+  />
   <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0f172a" />
   <link class="canonical" href="https://www.serinlinen.com/product-detail.html" />
 
   <style>
@@ -74,55 +78,76 @@
     .logo-area { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 2px; }
     .logo-title { font-weight: 800; font-size: 1.2rem; color: var(--primary); }
     .logo-sub { font-size: 0.75rem; color: var(--text-muted); }
+    .nav-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 16px; }
+    .nav-links a { font-size: 0.85rem; color: var(--text-main); font-weight: 600; }
 
-    /* 제품 상세 레이아웃 */
-    .product-detail-layout {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 32px;
-      align-items: start;
+    /* 상세 페이지 타이틀 섹션 */
+    .page-header { background: var(--surface); padding: 40px 0; border-bottom: 1px solid var(--border); }
+    .page-header h1 { margin-bottom: 8px; }
+    
+    /* 상세 제품 레이아웃 */
+    .product-detail-section { padding: 40px 0; }
+    .product-detail-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin-bottom: 32px;
+    }
+    
+    .product-name-badge {
+      display: inline-block;
+      background: var(--accent-light);
+      color: var(--accent);
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 4px;
+      margin-bottom: 12px;
     }
 
-    .product-img-card {
-      background: var(--surface);
+    /* 상세 사진 갤러리 그리드 (앞으로 추가될 사진 대응) */
+    .detail-img-grid {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 16px;
+      margin: 20px 0;
+    }
+    .detail-img-item {
+      background: var(--bg);
       border: 1px solid var(--border);
       border-radius: var(--radius);
       overflow: hidden;
     }
-    .product-main-img {
+    .detail-img-item img {
       width: 100%;
       aspect-ratio: 1 / 1;
       object-fit: cover;
     }
 
-    .product-info-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 24px;
-    }
-
+    /* 제품 스펙 테이블 유사 박스 */
     .spec-table {
       width: 100%;
       border-collapse: collapse;
-      margin: 16px 0;
-      font-size: 0.9rem;
+      margin-top: 16px;
+      font-size: 0.95rem;
     }
     .spec-table th, .spec-table td {
       border: 1px solid var(--border);
-      padding: 10px 14px;
+      padding: 12px 16px;
       text-align: left;
+      word-break: keep-all;
     }
     .spec-table th {
       background: var(--surface-sub);
       color: var(--primary);
       width: 30%;
+      font-weight: 700;
     }
     .spec-table td {
       color: var(--text-muted);
     }
 
-    .btn-wrap { display: flex; gap: 10px; margin-top: 24px; }
     .btn {
       display: inline-flex;
       align-items: center;
@@ -134,24 +159,30 @@
       font-size: 0.95rem;
       cursor: pointer;
       text-align: center;
-      flex: 1;
     }
-    .btn-fill { background: var(--primary); color: #fff; }
-    .btn-stroke { border: 1px solid var(--primary); color: var(--primary); background: #fff; }
+    .btn-fill { background: var(--primary); color: #fff; width: 100%; margin-top: 16px; }
 
     /* 푸터 */
     .footer-corporate { background: #0f172a; color: #94a3b8; padding: 32px 0 24px; font-size: 0.8rem; border-top: 1px solid #1e293b; }
+    .footer-main-layout { display: flex; flex-direction: column; gap: 20px; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #1e293b; }
+    .footer-brand { font-size: 1rem; font-weight: 700; color: #f1f5f9; margin-bottom: 8px; }
+    .footer-bottom { display: flex; flex-direction: column; gap: 8px; }
 
     @media (min-width: 768px) {
       .container { width: min(var(--max-width), calc(100% - 48px)); padding-left: 0; padding-right: 0; }
-      .section { padding: 80px 0; }
-      h1 { font-size: 2.2rem; }
       .header-box { flex-direction: row; justify-content: space-between; min-height: 70px; padding: 0; }
       .logo-area { flex-direction: row; gap: 12px; text-align: left; }
-      .product-detail-layout {
-        grid-template-columns: 1fr 1fr;
-        gap: 48px;
+      .logo-sub { border-left: 1px solid var(--border); padding-left: 12px; }
+      .nav-links { gap: 24px; }
+      .nav-links a { font-size: 0.9rem; }
+      
+      .detail-img-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
       }
+      .btn-fill { width: auto; }
+      .footer-main-layout { flex-direction: row; justify-content: space-between; }
+      .footer-bottom { flex-direction: row; justify-content: space-between; }
     }
   </style>
 </head>
@@ -160,76 +191,106 @@
   <!-- 상단 네비게이션 -->
   <header class="header">
     <div class="container header-box">
-      <a href="index.html" class="logo-area">
+      <div class="logo-area">
         <span class="logo-title">세린린넨</span>
-        <span class="logo-sub">홈으로 돌아가기</span>
-      </a>
-      <nav>
-        <a href="index.html#contact" class="btn btn-fill" style="min-height: 38px; padding: 0 16px; font-size: 0.85rem;">조달 문의</a>
+        <span class="logo-sub">병원 린넨 제조·공급 파트너</span>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html#about">회사 소개</a>
+        <a href="index.html#fabric">원단 시스템</a>
+        <a href="index.html#facility">생산 공정</a>
+        <a href="product-detail.html" style="color:var(--accent);">납품 품목 스펙</a>
+        <a href="index.html#process">거래 절차</a>
+        <a href="index.html#contact">조달 문의</a>
       </nav>
     </div>
   </header>
 
-  <!-- 제품 상세 본문 -->
-  <section class="section">
+  <!-- 페이지 타이틀 -->
+  <section class="page-header">
     <div class="container">
-      <div class="product-detail-layout">
-        <!-- 왼쪽: 제품 이미지 -->
-        <div class="product-img-card">
-          <!-- TODO: 실제 제품 사진 파일명으로 변경해주세요 (예: images/product-patient.jpg) -->
-          <img class="product-main-img" src="./images/work1.png" alt="병원 환자복 상세 사진" />
-        </div>
+      <h1>납품 품목 상세 스펙</h1>
+      <p>세린린넨에서 직접 제조 및 공급하는 의료용 의류 및 린넨 제품 라인업입니다.</p>
+    </div>
+  </section>
 
-        <!-- 오른쪽: 제품 설명 및 스펙 -->
-        <div class="product-info-card">
-          <span style="font-size: 0.85rem; font-weight: 700; color: var(--accent);">PREMIUM MEDICAL WEAR</span>
-          <h1>환자복 상하의 세트 (고급형)</h1>
-          <p>
-            장시간 착용에도 피부 자극이 적고 세탁 변형이 적은 프리미엄 순면 혼방 원단을 사용하여 제작된 환자복입니다. 전국의 주요 병원 및 요양병원에서 가장 선호하는 표준 규격 제품입니다.
-          </p>
+  <!-- 제품 상세 정보 섹션 -->
+  <section class="product-detail-section">
+    <div class="container">
 
-          <table class="spec-table">
-            <tr>
-              <th>적용 대상</th>
-              <td>입원 환자, 요양 환자</td>
-            </tr>
-            <tr>
-              <th>주요 소재</th>
-              <td>면 60% + 폴리에스터 40% (C/C 튼튼한 이중직)</td>
-            </tr>
-            <tr>
-              <th>색상/규격</th>
-              <td>블루 스트라이프 / 병원별 맞춤 치수 실측 가능</td>
-            </tr>
-            <tr>
-              <th>제조 방식</th>
-              <td>100% 국내 자체 공장 직접 생산</td>
-            </tr>
-          </table>
+      <!-- 검진가운 상세 카드 -->
+      <div class="product-detail-card" id="gown">
+        <span class="product-name-badge">메디컬 라인업</span>
+        <h2>품명: 고품격 검진가운 세트</h2>
+        <p>환자분의 착용 편의성과 병원 환경의 내구성을 동시에 고려하여 제작된 프리미엄 검진가운입니다.</p>
 
-          <h3 style="font-size: 1.1rem; margin-top: 20px;">제품 특징</h3>
-          <ul style="color: var(--text-muted); padding-left: 20px; font-size: 0.95rem; margin-bottom: 20px;">
-            <li>고온 세탁 및 잦은 멸균 세탁에도 보풀과 수축 현상을 최소화했습니다.</li>
-            <li>환자의 체형에 구애받지 않도록 인체공학적 여유핏으로 설계되었습니다.</li>
-            <li>기관 고유의 로고(CI) 및 마크 인쇄(나염/자수) 커스텀이 가능합니다.</li>
-          </ul>
-
-          <div class="btn-wrap">
-            <a href="index.html#contact" class="btn btn-fill">샘플 신청 및 견적 문의</a>
-            <a href="index.html#products" class="btn btn-stroke">목록으로</a>
+        <!-- 검진가운 실사 사진 3장 (추후 사진 추가 시 이 grid에 계속 추가 가능) -->
+        <div class="detail-img-grid">
+          <div class="detail-img-item">
+            <img src="./images/검진가운1.jpg" alt="검진가운 전면 착용 컷" />
+          </div>
+          <div class="detail-img-item">
+            <img src="./images/검진가운2.jpg" alt="검진가운 측면 착용 컷" />
+          </div>
+          <div class="detail-img-item">
+            <img src="./images/검진가운3.jpg" alt="검진가운 후면 착용 컷" />
           </div>
         </div>
+
+        <!-- 스펙 테이블 (맞춤 제작 가능 반영) -->
+        <table class="spec-table">
+          <tr>
+            <th>품명</th>
+            <td>고품격 검진가운 세트</td>
+          </tr>
+          <tr>
+            <th>원단 및 소재</th>
+            <td>맞춤 제작 가능 (병원 요구 사양 및 둔감성 원단 선택 반영)</td>
+          </tr>
+          <tr>
+            <th>색상 및 디자인</th>
+            <td>맞춤 제작 가능 (기관별 지정 컬러, 파이핑 및 로고 매칭)</td>
+          </tr>
+          <tr>
+            <th>사이즈 및 규격</th>
+            <td>맞춤 제작 가능 (방문 실측을 통한 최적의 치수 설계 지원)</td>
+          </tr>
+          <tr>
+            <th>납품 단위</th>
+            <td>병원 대량 조달 및 정기 납품 계약 기반</td>
+          </tr>
+        </table>
+
+        <div style="margin-top: 24px; text-align: right;">
+          <a href="index.html#contact" class="btn btn-fill">해당 품목 대량 조달 문의하기</a>
+        </div>
       </div>
+
+      <!-- 추후 다른 제품 상세 카드가 들어갈 자리 -->
+
     </div>
   </section>
 
   <!-- 푸터 -->
   <footer class="footer-corporate">
     <div class="container">
-      <div style="display: flex; flex-direction: column; gap: 8px;">
-        <div style="font-weight: 700; color: #f1f5f9;">세린린넨</div>
-        <p style="margin: 0;">부산광역시 기장군 기장읍 내리1길 12 | 대표전화 : 051-747-3511</p>
-        <p style="margin: 0;">© 2026 세린린넨. All Rights Reserved.</p>
+      <div class="footer-main-layout">
+        <div>
+          <div class="footer-brand">세린린넨</div>
+          <p style="color:#94a3b8; margin-bottom:6px;"><strong>본사 및 공장 :</strong> 부산광역시 기장군 기장읍 내리1길 12</p>
+          <p style="color:#94a3b8; margin-bottom:6px;"><strong>대표전화 :</strong> 051-747-3511 / 051-747-3512 | <strong>FAX :</strong> 051-747-3513</p>
+          <p style="color:#94a3b8; margin-bottom:0;"><strong>이메일 :</strong> made@serinlinen.com</p>
+        </div>
+        <div>
+          <div style="font-weight:700; color:#cbd5e1; margin-bottom:10px;">물류 거점 안내</div>
+          <p style="color:#64748b; line-height:1.5; margin:0;">
+            부산 기반의 탄탄한 직배송망을 중심으로 운영되며, 체계적인 전국 정기 연계 물류 네트워크를 통해 타 지역 의료기관 역시 신속하고 정확한 조달이 가능합니다.
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 세린린넨. All Rights Reserved.</div>
+        <div><a href="index.html#about" style="color:#64748b;">개인정보 처리방침</a></div>
       </div>
     </div>
   </footer>
