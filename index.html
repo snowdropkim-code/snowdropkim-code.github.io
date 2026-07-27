@@ -205,7 +205,7 @@
         <a href="#about">회사 소개</a>
         <a href="#fabric">원단 시스템</a>
         <a href="#facility">생산 공정</a>
-        <a href="#products">납품 품목</a>
+        <a href="product-detail.html">납품 품목</a> <!-- 이 부분이 상세 페이지로 연결됩니다 -->
         <a href="#process">거래 절차</a>
         <a href="#faq">주요 문의</a>
         <a href="#contact" style="color:var(--accent);">조달 문의</a>
@@ -223,7 +223,7 @@
         </p>
         <div class="btn-wrap">
           <a href="#contact" class="btn btn-fill">대량 조달 및 상담 문의</a>
-          <a href="#products" class="btn btn-stroke">공급 품목 보기</a>
+          <a href="product-detail.html" class="btn btn-stroke">공급 품목 보기</a>
         </div>
       </div>
       <div class="hero-img-box">
@@ -310,16 +310,20 @@
     </div>
   </section>
 
-  <!-- 납품 품목 안내 -->
+  <!-- 납품 품목 안내 (간략 소개 및 상세 페이지 유도) -->
   <section id="products" class="section section-white">
     <div class="container">
-      <div class="section-title-wrap">
-        <h2>납품 품목 안내</h2>
-        <p>세린린넨에서 공급하는 규격 품목 및 조달 대상 리스트입니다.</p>
+      <div class="section-title-wrap" style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 16px;">
+        <div>
+          <h2>납품 품목 안내</h2>
+          <p>세린린넨에서 공급하는 규격 품목 및 조달 대상 리스트입니다.</p>
+        </div>
+        <div>
+          <a href="product-detail.html" class="btn btn-fill" style="min-height: 40px; font-size: 0.9rem;">제품 상세 사진 및 스펙 보기 →</a>
+        </div>
       </div>
 
       <div class="catalog-wrapper">
-        <!-- 납품 가능 기관 (대안1 수정 반영) -->
         <div class="catalog-row">
           <h3>납품 가능 기관</h3>
           <div class="catalog-chips">
@@ -330,7 +334,6 @@
           </div>
         </div>
 
-        <!-- 환의 및 의료복류 -->
         <div class="catalog-row">
           <h3>환의 및 의료복류</h3>
           <div class="catalog-chips">
@@ -343,7 +346,6 @@
           </div>
         </div>
 
-        <!-- 침구 및 병실 린넨류 -->
         <div class="catalog-row">
           <h3>침구 및 병실 린넨류</h3>
           <div class="catalog-chips">
@@ -356,7 +358,6 @@
           </div>
         </div>
 
-        <!-- 수술 처치용 린넨류 -->
         <div class="catalog-row">
           <h3>수술·처치용 린넨류</h3>
           <div class="catalog-chips">
@@ -365,7 +366,6 @@
           </div>
         </div>
 
-        <!-- 보호대 및 보조용품 -->
         <div class="catalog-row">
           <h3>보호대 및 보조용품</h3>
           <div class="catalog-chips">
