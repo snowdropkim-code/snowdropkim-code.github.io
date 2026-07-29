@@ -106,7 +106,7 @@
       margin-bottom: 12px;
     }
 
-    /* 상세 사진 갤러리 그리드 (앞으로 추가될 사진 대응) */
+    /* 상세 사진 갤러리 그리드 */
     .detail-img-grid {
       display: grid;
       grid-template-columns: repeat(1, 1fr);
@@ -218,29 +218,27 @@
   <section class="product-detail-section">
     <div class="container">
 
-      <!-- 검진가운 상세 카드 -->
-      <div class="product-detail-card" id="gown">
+      <!-- 환자복 상세 카드 (검진가운보다 위쪽에 배치) -->
+      <div class="product-detail-card" id="patient-gown">
         <span class="product-name-badge">메디컬 라인업</span>
-        <h2>품명: 검진가운 </h2>
+        <h2>품명: 고품격 환자복 세트</h2>
+        <p>환우분들의 편안한 착용감과 우수한 세탁 내구성을 제공하는 표준 환자복 세트입니다.</p>
 
-        <!-- 검진가운 실사 사진 3장 (추후 사진 추가 시 이 grid에 계속 추가 가능) -->
-        <div class="detail-img-grid">
+        <!-- 환자복 실사 사진 2장 -->
+        <div class="detail-img-grid" style="grid-template-columns: repeat(2, 1fr);">
           <div class="detail-img-item">
-            <img src="./images/검진가운1.png" alt="검진가운 전면 착용 컷" />
+            <img src="./images/환의1.png" alt="환자복 전면 착용 컷" />
           </div>
           <div class="detail-img-item">
-            <img src="./images/검진가운2.png" alt="검진가운 측면 착용 컷" />
-          </div>
-          <div class="detail-img-item">
-            <img src="./images/검진가운3.png" alt="검진가운 후면 착용 컷" />
+            <img src="./images/환의2.jpg" alt="환자복 측면 착용 컷" />
           </div>
         </div>
 
-        <!-- 스펙 테이블 (맞춤 제작 가능 반영) -->
+        <!-- 스펙 테이블 -->
         <table class="spec-table">
           <tr>
             <th>품명</th>
-            <td>검진가운</td>
+            <td>고품격 환자복 세트</td>
           </tr>
           <tr>
             <th>원단 및 소재</th>
@@ -252,7 +250,7 @@
           </tr>
           <tr>
             <th>사이즈 및 규격</th>
-            <td>맞춤 제작 가능</td>
+            <td>맞춤 제작 가능 (방문 실측을 통한 최적의 치수 설계 지원)</td>
           </tr>
           <tr>
             <th>납품 단위</th>
@@ -265,7 +263,53 @@
         </div>
       </div>
 
-      <!-- 추후 다른 제품 상세 카드가 들어갈 자리 -->
+      <!-- 검진가운 상세 카드 (환자복 아래쪽) -->
+      <div class="product-detail-card" id="gown">
+        <span class="product-name-badge">메디컬 라인업</span>
+        <h2>품명: 고품격 검진가운 세트</h2>
+        <p>환자분의 착용 편의성과 병원 환경의 내구성을 동시에 고려하여 제작된 프리미엄 검진가운입니다.</p>
+
+        <!-- 검진가운 실사 사진 3장 -->
+        <div class="detail-img-grid">
+          <div class="detail-img-item">
+            <img src="./images/검진가운1.jpg" alt="검진가운 전면 착용 컷" />
+          </div>
+          <div class="detail-img-item">
+            <img src="./images/검진가운2.jpg" alt="검진가운 측면 착용 컷" />
+          </div>
+          <div class="detail-img-item">
+            <img src="./images/검진가운3.jpg" alt="검진가운 후면 착용 컷" />
+          </div>
+        </div>
+
+        <!-- 스펙 테이블 -->
+        <table class="spec-table">
+          <tr>
+            <th>품명</th>
+            <td>고품격 검진가운 세트</td>
+          </tr>
+          <tr>
+            <th>원단 및 소재</th>
+            <td>맞춤 제작 가능 (병원 요구 사양 및 둔감성 원단 선택 반영)</td>
+          </tr>
+          <tr>
+            <th>색상 및 디자인</th>
+            <td>맞춤 제작 가능 (기관별 지정 컬러, 파이핑 및 로고 매칭)</td>
+          </tr>
+          <tr>
+            <th>사이즈 및 규격</th>
+            <td>맞춤 제작 가능 (방문 실측을 통한 최적의 치수 설계 지원)</td>
+          </tr>
+          <tr>
+            <th>납품 단위</th>
+            <td>병원 대량 조달 및 정기 납품 계약 기반</td>
+          </tr>
+        </table>
+
+        <div style="margin-top: 24px; text-align: right;">
+          <a href="index.html#contact" class="btn btn-fill">해당 품목 대량 조달 문의하기</a>
+        </div>
+      </div>
 
     </div>
   </section>
