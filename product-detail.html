@@ -6,7 +6,7 @@
   <title>납품 품목 상세 스펙 | 세린린넨</title>
   <meta
     name="description"
-    content="세린린넨의 병원 전용 환자복, 검진가운, 수술복 및 린넨류 상세 품목 스펙 안내."
+    content="세린린넨의 병원 전용 의류, 포, 시트류, 환자보조용품 상세 품목 스펙 안내."
   />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#0f172a" />
@@ -49,9 +49,6 @@
       margin: 0 auto;
     }
 
-    .section { padding: 48px 0; }
-    .section-white { background: var(--surface); border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0; }
-
     h1, h2, h3, h4 {
       margin: 0 0 12px;
       font-weight: 700;
@@ -81,18 +78,55 @@
     .nav-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 16px; }
     .nav-links a { font-size: 0.85rem; color: var(--text-main); font-weight: 600; }
 
-    /* 상세 페이지 타이틀 섹션 */
-    .page-header { background: var(--surface); padding: 40px 0; border-bottom: 1px solid var(--border); }
-    .page-header h1 { margin-bottom: 8px; }
+    /* 페이지 타이틀 */
+    .page-header { background: var(--surface); padding: 32px 0; border-bottom: 1px solid var(--border); }
+    .page-header h1 { margin-bottom: 6px; }
+
+    /* 카테고리 탭 네비게이션 바 (4개 카테고리) */
+    .category-tab-bar {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 0;
+      position: sticky;
+      top: 61px;
+      z-index: 900;
+    }
+    .tab-menu {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+    }
+    .tab-btn {
+      background: var(--surface-sub);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 10px 20px;
+      border-radius: var(--radius);
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+    }
+    .tab-btn.active {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+
+    /* 상세 제품 컨텐츠 영역 */
+    .product-detail-section { padding: 32px 0; }
     
-    /* 상세 제품 레이아웃 */
-    .product-detail-section { padding: 40px 0; }
-    .product-detail-card {
+    .product-tab-content {
+      display: none;
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: var(--radius);
       padding: 24px;
-      margin-bottom: 32px;
+    }
+    .product-tab-content.active {
+      display: block;
     }
     
     .product-name-badge {
@@ -106,15 +140,27 @@
       margin-bottom: 12px;
     }
 
+    /* 서브 제품 카드 */
+    .sub-product-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      margin-bottom: 24px;
+    }
+    .sub-product-card:last-child {
+      margin-bottom: 0;
+    }
+
     /* 상세 사진 갤러리 그리드 */
     .detail-img-grid {
       display: grid;
       grid-template-columns: repeat(1, 1fr);
       gap: 16px;
-      margin: 20px 0;
+      margin: 16px 0;
     }
     .detail-img-item {
-      background: var(--bg);
+      background: var(--surface);
       border: 1px solid var(--border);
       border-radius: var(--radius);
       overflow: hidden;
@@ -125,7 +171,18 @@
       object-fit: cover;
     }
 
-    /* 제품 스펙 테이블 유사 박스 */
+    /* 공란 준비 중 안내 박스 스타일 */
+    .empty-content-box {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--text-muted);
+      background: var(--surface-sub);
+      border: 1px dashed var(--border);
+      border-radius: var(--radius);
+      margin-top: 16px;
+    }
+
+    /* 스펙 테이블 */
     .spec-table {
       width: 100%;
       border-collapse: collapse;
@@ -210,104 +267,137 @@
   <section class="page-header">
     <div class="container">
       <h1>납품 품목 상세 스펙</h1>
-      <p>세린린넨에서 직접 제조 및 공급하는 의료용 의류 및 린넨 제품 라인업입니다.</p>
+      <p>카테고리를 선택하여 세린린넨의 의료용 품목별 상세 사양을 확인하세요.</p>
     </div>
   </section>
+
+  <!-- 카테고리 탭 메뉴 바 (의류, 포, 시트류, 환자보조용품) -->
+  <div class="category-tab-bar">
+    <div class="container">
+      <div class="tab-menu">
+        <button class="tab-btn active" onclick="switchTab('tab-clothes', this)">의류</button>
+        <button class="tab-btn" onclick="switchTab('tab-cloth', this)">포</button>
+        <button class="tab-btn" onclick="switchTab('tab-sheet', this)">시트류</button>
+        <button class="tab-btn" onclick="switchTab('tab-aid', this)">환자보조용품</button>
+      </div>
+    </div>
+  </div>
 
   <!-- 제품 상세 정보 섹션 -->
   <section class="product-detail-section">
     <div class="container">
 
-      <!-- 환자복 상세 카드 (검진가운보다 위쪽에 배치) -->
-      <div class="product-detail-card" id="patient-gown">
-        <span class="product-name-badge">메디컬 라인업</span>
-        <h2>품명: 고품격 환자복 세트</h2>
-        <p>환우분들의 편안한 착용감과 우수한 세탁 내구성을 제공하는 표준 환자복 세트입니다.</p>
+      <!-- 1. 의류 탭 내용 (환자복, 검진가운 포함) -->
+      <div id="tab-clothes" class="product-tab-content active">
+        <span class="product-name-badge">메디컬 의류 라인업</span>
+        <h2>병원용 의류 제품군</h2>
+        <p>환우 및 의료진의 편의와 우수한 위생·세탁 내구성을 갖춘 메디컬 의류입니다.</p>
 
-        <!-- 환자복 실사 사진 2장 -->
-        <div class="detail-img-grid" style="grid-template-columns: repeat(2, 1fr);">
-          <div class="detail-img-item">
-            <img src="./images/환의1.png" alt="환자복 전면 착용 컷" />
+        <!-- 환자복 서브 카드 -->
+        <div class="sub-product-card" id="patient-gown">
+          <h3>[품명] 고품격 환자복 세트</h3>
+          <p style="font-size: 0.9rem;">편안한 착용감과 내구성을 제공하는 표준 환자복입니다.</p>
+          <div class="detail-img-grid" style="grid-template-columns: repeat(2, 1fr);">
+            <div class="detail-img-item">
+              <img src="./images/환의1.png" alt="환자복 전면 착용 컷" />
+            </div>
+            <div class="detail-img-item">
+              <img src="./images/환의2.jpg" alt="환자복 측면 착용 컷" />
+            </div>
           </div>
-          <div class="detail-img-item">
-            <img src="./images/환의2.jpg" alt="환자복 측면 착용 컷" />
-          </div>
+          <table class="spec-table">
+            <tr><th>품명</th><td>고품격 환자복 세트</td></tr>
+            <tr><th>원단 및 소재</th><td>맞춤 제작 가능 (병원 요구 사양 및 둔감성 원단 선택 반영)</td></tr>
+            <tr><th>색상 및 디자인</th><td>맞춤 제작 가능 (기관별 지정 컬러, 파이핑 및 로고 매칭)</td></tr>
+            <tr><th>사이즈 및 규격</th><td>맞춤 제작 가능 (방문 실측을 통한 치수 설계 지원)</td></tr>
+            <tr><th>납품 단위</th><td>병원 대량 조달 및 정기 납품 계약 기반</td></tr>
+          </table>
         </div>
 
-        <!-- 스펙 테이블 -->
-        <table class="spec-table">
-          <tr>
-            <th>품명</th>
-            <td>고품격 환자복 세트</td>
-          </tr>
-          <tr>
-            <th>원단 및 소재</th>
-            <td>맞춤 제작 가능 (병원 요구 사양 및 둔감성 원단 선택 반영)</td>
-          </tr>
-          <tr>
-            <th>색상 및 디자인</th>
-            <td>맞춤 제작 가능 (기관별 지정 컬러, 파이핑 및 로고 매칭)</td>
-          </tr>
-          <tr>
-            <th>사이즈 및 규격</th>
-            <td>맞춤 제작 가능 (방문 실측을 통한 최적의 치수 설계 지원)</td>
-          </tr>
-          <tr>
-            <th>납품 단위</th>
-            <td>병원 대량 조달 및 정기 납품 계약 기반</td>
-          </tr>
-        </table>
+        <!-- 검진가운 서브 카드 -->
+        <div class="sub-product-card" id="gown" style="margin-top: 24px;">
+          <h3>[품명] 고품격 검진가운 세트</h3>
+          <p style="font-size: 0.9rem;">진료 및 검진 시 최적의 편리함을 제공하는 프리미엄 검진가운입니다.</p>
+          <div class="detail-img-grid">
+            <div class="detail-img-item">
+              <img src="./images/검진가운1.jpg" alt="검진가운 전면 착용 컷" />
+            </div>
+            <div class="detail-img-item">
+              <img src="./images/검진가운2.jpg" alt="검진가운 측면 착용 컷" />
+            </div>
+            <div class="detail-img-item">
+              <img src="./images/검진가운3.jpg" alt="검진가운 후면 착용 컷" />
+            </div>
+          </div>
+          <table class="spec-table">
+            <tr><th>품명</th><td>고품격 검진가운 세트</td></tr>
+            <tr><th>원단 및 소재</th><td>맞춤 제작 가능 (병원 요구 사양 및 둔감성 원단 선택 반영)</td></tr>
+            <tr><th>색상 및 디자인</th><td>맞춤 제작 가능 (기관별 지정 컬러, 파이핑 및 로고 매칭)</td></tr>
+            <tr><th>사이즈 및 규격</th><td>맞춤 제작 가능 (방문 실측을 통한 치수 설계 지원)</td></tr>
+            <tr><th>납품 단위</th><td>병원 대량 조달 및 정기 납품 계약 기반</td></tr>
+          </table>
+        </div>
 
         <div style="margin-top: 24px; text-align: right;">
-          <a href="index.html#contact" class="btn btn-fill">해당 품목 대량 조달 문의하기</a>
+          <a href="index.html#contact" class="btn btn-fill">의류 제품 대량 조달 문의하기</a>
         </div>
       </div>
 
-      <!-- 검진가운 상세 카드 (환자복 아래쪽) -->
-      <div class="product-detail-card" id="gown">
-        <span class="product-name-badge">메디컬 라인업</span>
-        <h2>품명: 고품격 검진가운 세트</h2>
-        <p>환자분의 착용 편의성과 병원 환경의 내구성을 동시에 고려하여 제작된 프리미엄 검진가운입니다.</p>
-
-        <!-- 검진가운 실사 사진 3장 -->
-        <div class="detail-img-grid">
+      <!-- 2. 포 탭 내용 (포1.png 반영) -->
+      <div id="tab-cloth" class="product-tab-content">
+        <span class="product-name-badge">메디컬 포 라인업</span>
+        <h2>품명: 의료용 특수 포 세트</h2>
+        <p>엄격한 위생 기준과 방수·항균 기능이 적용되는 수술 및 처치용 의료용 포 규격 제품입니다.</p>
+        
+        <!-- 포 실사 사진 1장 -->
+        <div class="detail-img-grid" style="grid-template-columns: repeat(1, 1fr); max-width: 400px;">
           <div class="detail-img-item">
-            <img src="./images/검진가운1.png" alt="검진가운 전면 착용 컷" />
-          </div>
-          <div class="detail-img-item">
-            <img src="./images/검진가운2.png" alt="검진가운 측면 착용 컷" />
-          </div>
-          <div class="detail-img-item">
-            <img src="./images/검진가운3.png" alt="검진가운 후면 착용 컷" />
+            <img src="./images/포1.png" alt="의료용 포 제품 컷" />
           </div>
         </div>
 
-        <!-- 스펙 테이블 -->
         <table class="spec-table">
-          <tr>
-            <th>품명</th>
-            <td>고품격 검진가운 세트</td>
-          </tr>
-          <tr>
-            <th>원단 및 소재</th>
-            <td>맞춤 제작 가능 (병원 요구 사양 및 둔감성 원단 선택 반영)</td>
-          </tr>
-          <tr>
-            <th>색상 및 디자인</th>
-            <td>맞춤 제작 가능 (기관별 지정 컬러, 파이핑 및 로고 매칭)</td>
-          </tr>
-          <tr>
-            <th>사이즈 및 규격</th>
-            <td>맞춤 제작 가능 (방문 실측을 통한 최적의 치수 설계 지원)</td>
-          </tr>
-          <tr>
-            <th>납품 단위</th>
-            <td>병원 대량 조달 및 정기 납품 계약 기반</td>
-          </tr>
+          <tr><th>품명</th><td>의료용 특수 포 세트</td></tr>
+          <tr><th>원단 및 소재</th><td>맞춤 제작 가능 (방수 기능 및 고밀도 의료용 원단 선택 반영)</td></tr>
+          <tr><th>색상 및 디자인</th><td>맞춤 제작 가능 (기관별 지정 컬러 및 규격 매칭)</td></tr>
+          <tr><th>사이즈 및 규격</th><td>맞춤 제작 가능 (수술용·처치용 목적별 맞춤 설계)</td></tr>
+          <tr><th>납품 단위</th><td>병원 대량 조달 및 정기 납품 계약 기반</td></tr>
         </table>
 
         <div style="margin-top: 24px; text-align: right;">
-          <a href="index.html#contact" class="btn btn-fill">해당 품목 대량 조달 문의하기</a>
+          <a href="index.html#contact" class="btn btn-fill">포 제품 조달 문의하기</a>
+        </div>
+      </div>
+
+      <!-- 3. 시트류 탭 내용 (공란/준비중) -->
+      <div id="tab-sheet" class="product-tab-content">
+        <span class="product-name-badge">메디컬 시트 라인업</span>
+        <h2>병원용 침대 시트 및 커버류</h2>
+        <p>병상 환경을 청결하고 안락하게 유지하는 고밀도 시트 및 커버 제품군입니다.</p>
+
+        <div class="empty-content-box">
+          <h3 style="color: var(--primary); margin-bottom: 8px;">시트류 제품 상세 스펙 및 사진 준비 중</h3>
+          <p style="margin-bottom: 0;">추후 해당 카테고리 사진과 스펙 정보가 업데이트될 예정입니다.</p>
+        </div>
+
+        <div style="margin-top: 24px; text-align: right;">
+          <a href="index.html#contact" class="btn btn-fill">시트류 제품 조달 문의하기</a>
+        </div>
+      </div>
+
+      <!-- 4. 환자보조용품 탭 내용 (공란/준비중) -->
+      <div id="tab-aid" class="product-tab-content">
+        <span class="product-name-badge">메디컬 보조용품 라인업</span>
+        <h2>병동 환자보조용품</h2>
+        <p>환자의 안전한 이동과 편의를 돕기 위해 원내에서 활용되는 보조 용품입니다.</p>
+
+        <div class="empty-content-box">
+          <h3 style="color: var(--primary); margin-bottom: 8px;">환자보조용품 상세 스펙 및 사진 준비 중</h3>
+          <p style="margin-bottom: 0;">추후 해당 카테고리 사진과 스펙 정보가 업데이트될 예정입니다.</p>
+        </div>
+
+        <div style="margin-top: 24px; text-align: right;">
+          <a href="index.html#contact" class="btn btn-fill">보조용품 조달 문의하기</a>
         </div>
       </div>
 
@@ -337,6 +427,23 @@
       </div>
     </div>
   </footer>
+
+  <!-- 탭 전환 스크립트 -->
+  <script>
+    function switchTab(tabId, btnElement) {
+      // 모든 탭 컨텐츠 숨기기
+      const contents = document.querySelectorAll('.product-tab-content');
+      contents.forEach(content => content.classList.remove('active'));
+
+      // 모든 탭 버튼 활성 해제
+      const buttons = document.querySelectorAll('.tab-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+
+      // 선택한 탭 컨텐츠 및 버튼만 활성화
+      document.getElementById(tabId).classList.add('active');
+      btnElement.classList.add('active');
+    }
+  </script>
 
 </body>
 </html>
