@@ -127,9 +127,22 @@
     .gallery-item { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
     .gallery-item img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
 
-    /* 제품 실사 갤러리 추가 스타일 */
+    /* 제품 실사 갤러리 추가 스타일 (링크 호버 효과 포함) */
     .product-showcase-grid { display: grid; grid-template-columns: repeat(1, 1fr); gap: 20px; margin-top: 24px; }
-    .product-showcase-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; }
+    .product-showcase-card { 
+      background: var(--surface); 
+      border: 1px solid var(--border); 
+      border-radius: var(--radius); 
+      overflow: hidden; 
+      display: flex; 
+      flex-direction: column; 
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .product-showcase-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    }
     .product-showcase-img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; background: #eee; }
     .product-showcase-info { padding: 16px; }
     .product-showcase-badge { display: inline-block; background: var(--accent-light); color: var(--accent); font-size: 0.75rem; font-weight: 700; padding: 3px 8px; border-radius: 4px; margin-bottom: 8px; }
@@ -331,36 +344,36 @@
         </div>
       </div>
 
-      <!-- 대표 제품 실사 갤러리 (4가지 사진: 환의, 포, 침구류1.png 반영) -->
+      <!-- 대표 제품 실사 갤러리 (클릭 시 각 제품 상세 페이지로 이동하도록 <a> 태그 적용) -->
       <div class="product-showcase-grid">
-        <div class="product-showcase-card">
+        <a href="product-detail.html#gowns" class="product-showcase-card">
           <img class="product-showcase-img" src="./images/환의1.png" alt="환의 및 의료복류" />
           <div class="product-showcase-info">
             <span class="product-showcase-badge">메디컬 의류</span>
             <h4 style="margin: 0 0 4px;">환의 및 의료복류</h4>
           </div>
-        </div>
-        <div class="product-showcase-card">
+        </a>
+        <a href="product-detail.html#linens-surgery" class="product-showcase-card">
           <img class="product-showcase-img" src="./images/포1.png" alt="수술·처치용 린넨류" />
           <div class="product-showcase-info">
             <span class="product-showcase-badge">메디컬 수술·처치</span>
             <h4 style="margin: 0 0 4px;">수술·처치용 린넨류</h4>
           </div>
-        </div>
-        <div class="product-showcase-card">
+        </a>
+        <a href="product-detail.html#linens-bedding" class="product-showcase-card">
           <img class="product-showcase-img" src="./images/침구류1.png" alt="침구 및 병실 린넨류" />
           <div class="product-showcase-info">
             <span class="product-showcase-badge">메디컬 침구</span>
             <h4 style="margin: 0 0 4px;">침구 및 병실 린넨류</h4>
           </div>
-        </div>
-        <div class="product-showcase-card">
+        </a>
+        <a href="product-detail.html#protectors" class="product-showcase-card">
           <div class="product-showcase-img" style="display:flex; align-items:center; justify-content:center; color:var(--text-muted); font-size:0.9rem;">준비 중</div>
           <div class="product-showcase-info">
             <span class="product-showcase-badge">메디컬 보조용품</span>
             <h4 style="margin: 0 0 4px;">보호대 및 보조용품</h4>
           </div>
-        </div>
+        </a>
       </div>
 
       <div class="catalog-wrapper" style="margin-top: 32px;">
