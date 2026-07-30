@@ -6,7 +6,7 @@
   <title>납품 품목 상세 스펙 | 세린린넨</title>
   <meta
     name="description"
-    content="세린린넨의 병원 전용 의류, 포, 시트류, 환자보조용품 상세 품목 스펙 안내."
+    content="세린린넨의 환의 및 의료복류, 침구 및 병실 린넨류, 수술·처치용 린넨류, 보호대 및 보조용품 상세 품목 스펙 안내."
   />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#0f172a" />
@@ -171,7 +171,7 @@
       font-size: 0.85rem;
     }
 
-    /* 상세 사진 갤러리 그리드 (모바일 기본 2열, 터치 안내 추가) */
+    /* 상세 사진 갤러리 그리드 */
     .detail-img-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -220,7 +220,7 @@
       margin-top: 12px;
     }
 
-    /* 스펙 테이블 (모바일 가독성 개선) */
+    /* 스펙 테이블 */
     .spec-table {
       width: 100%;
       border-collapse: collapse;
@@ -362,10 +362,10 @@
   <div class="category-tab-bar">
     <div class="container">
       <div class="tab-menu">
-        <button class="tab-btn active" onclick="switchTab('tab-clothes', this)">의류</button>
-        <button class="tab-btn" onclick="switchTab('tab-cloth', this)">포</button>
-        <button class="tab-btn" onclick="switchTab('tab-sheet', this)">시트류</button>
-        <button class="tab-btn" onclick="switchTab('tab-aid', this)">환자보조용품</button>
+        <button class="tab-btn active" onclick="switchTab('tab-clothes', this)">환의 및 의료복류</button>
+        <button class="tab-btn" onclick="switchTab('tab-cloth', this)">수술·처치용 린넨류</button>
+        <button class="tab-btn" onclick="switchTab('tab-sheet', this)">침구 및 병실 린넨류</button>
+        <button class="tab-btn" onclick="switchTab('tab-aid', this)">보호대 및 보조용품</button>
       </div>
     </div>
   </div>
@@ -374,10 +374,10 @@
   <section class="product-detail-section">
     <div class="container">
 
-      <!-- 1. 의류 탭 내용 -->
+      <!-- 1. 환의 및 의료복류 탭 내용 -->
       <div id="tab-clothes" class="product-tab-content active">
         <span class="product-name-badge">메디컬 의류 라인업</span>
-        <h2>병원용 의류 제품군</h2>
+        <h2>환의 및 의료복류 제품군</h2>
         <p>환우 및 의료진의 편의와 우수한 위생·세탁 내구성을 갖춘 메디컬 의류입니다.</p>
 
         <!-- 환자복 서브 카드 -->
@@ -513,14 +513,14 @@
         </div>
 
         <div style="margin-top: 16px; text-align: right;">
-          <a href="index.html#contact" class="btn btn-fill">의류 제품 대량 조달 문의하기</a>
+          <a href="index.html#contact" class="btn btn-fill">환의 및 의료복류 대량 조달 문의하기</a>
         </div>
       </div>
 
-      <!-- 2. 포 탭 내용 -->
+      <!-- 2. 수술·처치용 린넨류 탭 내용 -->
       <div id="tab-cloth" class="product-tab-content">
-        <span class="product-name-badge">메디컬 포 라인업</span>
-        <h2>품명: 의료용 포</h2>
+        <span class="product-name-badge">메디컬 수술·처치 라인업</span>
+        <h2>품명: 수술·처치용 의료용 포</h2>
         <p>엄격한 위생 기준과 방수 기능이 적용되는 수술 및 처치용 의료용 포 규격 제품입니다.</p>
         
         <div class="detail-img-grid" style="grid-template-columns: repeat(1, 1fr); max-width: 300px;">
@@ -530,7 +530,7 @@
         </div>
 
         <table class="spec-table">
-          <tr><th>품명</th><td>의료용 포</td></tr>
+          <tr><th>품명</th><td>수술·처치용 의료용 포</td></tr>
           <tr><th>원단 및 소재</th><td>맞춤 제작 가능 (방수 기능 및 고밀도 의료용 원단 선택 반영)</td></tr>
           <tr><th>색상 및 디자인</th><td>맞춤 제작 가능 (기관별 지정 컬러 및 규격 매칭)</td></tr>
           <tr><th>사이즈 및 규격</th><td>맞춤 제작 가능 (수술용·처치용 목적별 맞춤 설계)</td></tr>
@@ -538,39 +538,39 @@
         </table>
 
         <div style="margin-top: 16px; text-align: right;">
-          <a href="index.html#contact" class="btn btn-fill">포 제품 조달 문의하기</a>
+          <a href="index.html#contact" class="btn btn-fill">수술·처치용 린넨류 조달 문의하기</a>
         </div>
       </div>
 
-      <!-- 3. 시트류 탭 내용 -->
+      <!-- 3. 침구 및 병실 린넨류 탭 내용 -->
       <div id="tab-sheet" class="product-tab-content">
-        <span class="product-name-badge">메디컬 시트 라인업</span>
-        <h2>병원용 침대 시트 및 커버류</h2>
-        <p>병상 환경을 청결하고 안락하게 유지하는 고밀도 시트 및 커버 제품군입니다.</p>
+        <span class="product-name-badge">메디컬 침구 라인업</span>
+        <h2>침구 및 병실 린넨류</h2>
+        <p>병상 환경을 청결하고 안락하게 유지하는 고밀도 시트, 커버 및 침구 제품군입니다.</p>
 
         <div class="empty-content-box">
-          <h3 style="color: var(--primary); margin-bottom: 6px;">시트류 제품 상세 스펙 및 사진 준비 중</h3>
+          <h3 style="color: var(--primary); margin-bottom: 6px;">침구 및 병실 린넨류 상세 스펙 및 사진 준비 중</h3>
           <p style="margin-bottom: 0;">추후 해당 카테고리 사진과 스펙 정보가 업데이트될 예정입니다.</p>
         </div>
 
         <div style="margin-top: 16px; text-align: right;">
-          <a href="index.html#contact" class="btn btn-fill">시트류 제품 조달 문의하기</a>
+          <a href="index.html#contact" class="btn btn-fill">침구 및 병실 린넨류 조달 문의하기</a>
         </div>
       </div>
 
-      <!-- 4. 환자보조용품 탭 내용 -->
+      <!-- 4. 보호대 및 보조용품 탭 내용 -->
       <div id="tab-aid" class="product-tab-content">
-        <span class="product-name-badge">메디컬 보조용품 라인업</span>
-        <h2>병동 환자보조용품</h2>
-        <p>환자의 안전한 이동과 편의를 돕기 위해 원내에서 활용되는 보조 용품입니다.</p>
+        <span class="product-name-badge">메디컬 보호대 및 보조용품 라인업</span>
+        <h2>보호대 및 병동 보조용품</h2>
+        <p>환자의 안전한 이동과 보호를 돕기 위해 원내에서 활용되는 보호대 및 보조 용품입니다.</p>
 
         <div class="empty-content-box">
-          <h3 style="color: var(--primary); margin-bottom: 6px;">환자보조용품 상세 스펙 및 사진 준비 중</h3>
+          <h3 style="color: var(--primary); margin-bottom: 6px;">보호대 및 보조용품 상세 스펙 및 사진 준비 중</h3>
           <p style="margin-bottom: 0;">추후 해당 카테고리 사진과 스펙 정보가 업데이트될 예정입니다.</p>
         </div>
 
         <div style="margin-top: 16px; text-align: right;">
-          <a href="index.html#contact" class="btn btn-fill">보조용품 조달 문의하기</a>
+          <a href="index.html#contact" class="btn btn-fill">보호대 및 보조용품 조달 문의하기</a>
         </div>
       </div>
 
