@@ -3,14 +3,34 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>납품 품목 상세 스펙 | 세린린넨</title>
+
+  <title>납품 품목 상세 | 세린린넨</title>
   <meta
     name="description"
-    content="세린린넨의 환의 및 의료복류, 침구 및 병실 린넨류, 수술·처치용 린넨류, 보호대 및 보조용품 상세 품목 스펙 안내."
+    content="세린린넨의 환의 및 의료복류, 수술·처치용 린넨류, 침구 및 병실 린넨류, 보호대 및 보조용품 상세 품목 안내. 병원별 맞춤 제작과 조달 문의가 가능합니다."
   />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#0f172a" />
-  <link class="canonical" href="https://www.serinlinen.com/product-detail.html" />
+  <link rel="canonical" href="https://www.serinlinen.com/product-detail.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="납품 품목 상세 | 세린린넨" />
+  <meta
+    property="og:description"
+    content="병원 린넨 및 환자복, 수술·처치용 린넨류, 병실 침구류, 보호대 및 보조용품까지 세린린넨의 상세 품목을 확인하세요."
+  />
+  <meta property="og:url" content="https://www.serinlinen.com/product-detail.html" />
+  <meta property="og:image" content="https://www.serinlinen.com/images/환의1.png" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="납품 품목 상세 | 세린린넨" />
+  <meta
+    name="twitter:description"
+    content="병원 린넨 및 환자복, 수술·처치용 린넨류, 병실 침구류, 보호대 및 보조용품까지 세린린넨의 상세 품목을 확인하세요."
+  />
+  <meta name="twitter:image" content="https://www.serinlinen.com/images/환의1.png" />
 
   <style>
     :root {
@@ -21,13 +41,23 @@
       --text-muted: #475569;
       --primary: #0f1e36;
       --accent: #0284c7;
+      --accent-strong: #0369a1;
       --accent-light: #f0f9ff;
       --border: #cbd5e1;
+      --success-bg: #ecfdf5;
+      --success-text: #065f46;
       --radius: 8px;
-      --max-width: 1100px;
+      --shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+      --max-width: 1140px;
+      --header-height-mobile: 56px;
+      --header-height-desktop: 70px;
     }
 
-    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
     html { scroll-behavior: smooth; }
 
     body {
@@ -42,6 +72,7 @@
 
     a { color: inherit; text-decoration: none; }
     img { max-width: 100%; display: block; height: auto; }
+    button { font: inherit; }
 
     .container {
       width: 100%;
@@ -52,96 +83,261 @@
 
     h1, h2, h3, h4 {
       margin: 0 0 10px;
-      font-weight: 700;
+      font-weight: 800;
       color: var(--primary);
     }
 
-    h1 { font-size: 1.5rem; line-height: 1.35; }
-    h2 { font-size: 1.3rem; }
-    h3 { font-size: 1.1rem; }
+    h1 { font-size: 1.68rem; line-height: 1.3; }
+    h2 { font-size: 1.35rem; line-height: 1.35; }
+    h3 { font-size: 1.08rem; line-height: 1.4; }
+    h4 { font-size: 0.98rem; }
 
-    p { margin: 0 0 10px; color: var(--text-muted); font-size: 0.92rem; }
+    p {
+      margin: 0 0 10px;
+      color: var(--text-muted);
+      font-size: 0.92rem;
+    }
 
-    /* 헤더 (모바일 최적화) */
+    ul { margin: 0; padding-left: 18px; }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent-light);
+      color: var(--accent-strong);
+      border: 1px solid #bae6fd;
+      border-radius: 999px;
+      padding: 6px 12px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 16px;
+      border-radius: var(--radius);
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      text-align: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      border: none;
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+
+    .btn-fill {
+      background: var(--primary);
+      color: #fff;
+      box-shadow: 0 8px 20px rgba(15, 30, 54, 0.18);
+    }
+
+    .btn-stroke {
+      background: #fff;
+      color: var(--primary);
+      border: 1px solid var(--primary);
+    }
+
+    .btn-accent {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 8px 20px rgba(2, 132, 199, 0.18);
+    }
+
+    /* Header */
     .header {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(255, 255, 255, 0.98);
+      background: rgba(255, 255, 255, 0.96);
       border-bottom: 1px solid var(--border);
-      backdrop-filter: blur(8px);
+      backdrop-filter: blur(10px);
     }
-    .header-box { 
-      display: flex; 
-      flex-direction: row; 
-      align-items: center; 
-      justify-content: space-between; 
-      padding: 10px 16px; 
-      min-height: 56px;
+
+    .header-box {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 16px;
+      min-height: var(--header-height-mobile);
+      gap: 12px;
     }
-    .logo-area { display: flex; align-items: baseline; gap: 8px; }
-    .logo-title { font-weight: 800; font-size: 1.1rem; color: var(--primary); }
-    .logo-sub { font-size: 0.7rem; color: var(--text-muted); display: none; }
-    
-    .nav-links { display: flex; gap: 12px; overflow-x: auto; padding: 4px 0; }
+
+    .logo-area {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .logo-title {
+      font-weight: 900;
+      font-size: 1.08rem;
+      color: var(--primary);
+    }
+
+    .logo-sub {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      display: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 12px;
+      overflow-x: auto;
+      padding: 4px 0;
+      scrollbar-width: none;
+    }
+
     .nav-links::-webkit-scrollbar { display: none; }
-    .nav-links a { font-size: 0.8rem; color: var(--text-main); font-weight: 600; white-space: nowrap; }
 
-    /* 페이지 타이틀 */
-    .page-header { background: var(--surface); padding: 24px 0; border-bottom: 1px solid var(--border); }
-    .page-header h1 { margin-bottom: 4px; }
-    .page-header p { font-size: 0.88rem; margin-bottom: 0; }
-
-    /* 카테고리 탭 네비게이션 바 */
-    .category-tab-bar {
-      background: var(--surface);
-      border-bottom: 1px solid var(--border);
-      padding: 10px 0;
-      position: sticky;
-      top: 56px;
-      z-index: 900;
+    .nav-links a {
+      font-size: 0.8rem;
+      color: var(--text-main);
+      font-weight: 700;
+      white-space: nowrap;
     }
+
+    .nav-links a.active-link { color: var(--accent); }
+
+    /* Hero / page header */
+    .page-header {
+      background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(248,250,252,0.98));
+      border-bottom: 1px solid var(--border);
+      padding: 28px 0 24px;
+    }
+
+    .page-header-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    .page-header p {
+      font-size: 0.92rem;
+      margin-bottom: 0;
+    }
+
+    .page-points {
+      display: grid;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .page-point {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius);
+      padding: 12px 14px;
+    }
+
+    .page-point strong {
+      display: block;
+      color: var(--primary);
+      font-size: 0.9rem;
+      margin-bottom: 2px;
+    }
+
+    .page-point span {
+      display: block;
+      color: var(--text-muted);
+      font-size: 0.84rem;
+    }
+
+    .header-cta-box {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      box-shadow: var(--shadow);
+    }
+
+    .header-cta-box h3 {
+      font-size: 1.02rem;
+      margin-bottom: 8px;
+    }
+
+    .header-cta-box p {
+      font-size: 0.88rem;
+      margin-bottom: 12px;
+    }
+
+    .cta-stack {
+      display: grid;
+      gap: 10px;
+    }
+
+    /* Sticky tab bar */
+    .category-tab-bar {
+      background: rgba(255,255,255,0.96);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: var(--header-height-mobile);
+      z-index: 950;
+      backdrop-filter: blur(10px);
+    }
+
     .tab-menu {
       display: flex;
       gap: 8px;
       overflow-x: auto;
-      padding-bottom: 2px;
+      padding: 12px 0;
       scrollbar-width: none;
     }
+
     .tab-menu::-webkit-scrollbar { display: none; }
+
     .tab-btn {
       background: var(--surface-sub);
       border: 1px solid var(--border);
       color: var(--text-muted);
-      padding: 8px 16px;
-      border-radius: 20px;
-      font-weight: 600;
-      font-size: 0.88rem;
-      cursor: pointer;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.86rem;
       white-space: nowrap;
-      transition: all 0.2s ease;
       flex-shrink: 0;
+      transition: all 0.2s ease;
     }
+
     .tab-btn.active {
       background: var(--primary);
       color: #fff;
       border-color: var(--primary);
     }
 
-    /* 상세 제품 컨텐츠 영역 */
-    .product-detail-section { padding: 20px 0 40px; }
-    
+    /* Section area */
+    .product-detail-section {
+      padding: 20px 0 40px;
+    }
+
     .product-tab-content {
       display: none;
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 16px;
+      border-radius: 12px;
+      padding: 18px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
     }
+
     .product-tab-content.active {
       display: block;
     }
-    
+
+    .product-header-box {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
     .product-name-badge {
       display: inline-block;
       background: var(--accent-light);
@@ -153,55 +349,92 @@
       margin-bottom: 8px;
     }
 
-    /* 서브 제품 카드 */
-    .sub-product-card {
-      background: var(--bg);
+    .product-summary-card {
+      background: #fff;
       border: 1px solid var(--border);
       border-radius: var(--radius);
       padding: 14px;
-      margin-bottom: 20px;
-    }
-    .sub-product-card:last-child {
-      margin-bottom: 0;
-    }
-    .sub-product-card h3 {
-      font-size: 1.05rem;
-    }
-    .sub-product-card p {
-      font-size: 0.85rem;
     }
 
-    /* 상세 사진 갤러리 그리드 */
+    .product-summary-card ul {
+      display: grid;
+      gap: 8px;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* Sub cards */
+    .sub-product-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px;
+      margin-bottom: 18px;
+    }
+
+    .sub-product-card:last-child { margin-bottom: 0; }
+
+    .sub-product-head {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .sub-product-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .meta-chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid var(--border);
+      color: var(--text-main);
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    /* Image grid */
     .detail-img-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 10px;
       margin: 12px 0;
     }
+
     .detail-img-item {
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 6px;
+      border-radius: 8px;
       overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 6px;
+      padding: 8px;
       position: relative;
       cursor: zoom-in;
+      min-height: 150px;
     }
+
     .detail-img-item::after {
-      content: '🔍 확대';
+      content: '확대';
       position: absolute;
       bottom: 6px;
       right: 6px;
-      background: rgba(15, 30, 54, 0.7);
+      background: rgba(15, 30, 54, 0.72);
       color: #fff;
-      font-size: 0.65rem;
-      padding: 2px 6px;
-      border-radius: 4px;
+      font-size: 0.64rem;
+      font-weight: 700;
+      padding: 3px 7px;
+      border-radius: 999px;
       pointer-events: none;
     }
+
     .detail-img-item img {
       width: 100%;
       height: 100%;
@@ -209,127 +442,348 @@
       object-fit: contain;
     }
 
-    /* 공란 준비 중 안내 박스 스타일 */
-    .empty-content-box {
-      text-align: center;
-      padding: 40px 16px;
-      color: var(--text-muted);
-      background: var(--surface-sub);
-      border: 1px dashed var(--border);
-      border-radius: var(--radius);
-      margin-top: 12px;
-    }
-
-    /* 스펙 테이블 */
+    /* Spec table */
     .spec-table {
       width: 100%;
       border-collapse: collapse;
       margin-top: 12px;
-      font-size: 0.85rem;
+      font-size: 0.84rem;
+      overflow: hidden;
+      border-radius: 8px;
     }
-    .spec-table th, .spec-table td {
+
+    .spec-table th,
+    .spec-table td {
       border: 1px solid var(--border);
       padding: 10px 12px;
       text-align: left;
+      vertical-align: top;
     }
+
     .spec-table th {
       background: var(--surface-sub);
       color: var(--primary);
-      width: 32%;
-      font-weight: 700;
+      width: 34%;
+      font-weight: 800;
     }
+
     .spec-table td {
+      color: var(--text-muted);
+      background: #fff;
+    }
+
+    /* Empty / guidance boxes */
+    .empty-content-box,
+    .guidance-box {
+      background: var(--surface-sub);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px;
+      margin-top: 12px;
+    }
+
+    .empty-content-box {
+      text-align: center;
+      border-style: dashed;
+    }
+
+    .guidance-box h3,
+    .empty-content-box h3 {
+      margin-bottom: 6px;
+    }
+
+    .guidance-list {
+      display: grid;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .guidance-item {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px;
+      font-size: 0.9rem;
       color: var(--text-muted);
     }
 
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 44px;
-      padding: 0 16px;
-      border-radius: var(--radius);
-      font-weight: 600;
-      font-size: 0.9rem;
-      cursor: pointer;
-      text-align: center;
+    .status-chip {
+      display: inline-block;
+      background: var(--success-bg);
+      color: var(--success-text);
+      font-size: 0.76rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
     }
-    .btn-fill { background: var(--primary); color: #fff; width: 100%; margin-top: 14px; }
 
-    /* 이미지 라이트박스(확대 팝업) 스타일 */
+    .cta-panel {
+      margin-top: 18px;
+      background: linear-gradient(180deg, #0f1e36, #0f172a);
+      color: #fff;
+      border-radius: 12px;
+      padding: 18px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .cta-panel h3 {
+      color: #fff;
+      margin-bottom: 4px;
+    }
+
+    .cta-panel p {
+      color: #cbd5e1;
+      margin-bottom: 0;
+    }
+
+    .cta-panel .btn-wrap {
+      display: grid;
+      gap: 10px;
+    }
+
+    /* Lightbox */
     #lightbox-modal {
       display: none;
       position: fixed;
       z-index: 9999;
-      top: 0;
-      left: 0;
+      inset: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.85);
+      background: rgba(0, 0, 0, 0.88);
       align-items: center;
       justify-content: center;
       padding: 20px;
     }
+
     #lightbox-modal.active {
       display: flex;
     }
+
     #lightbox-modal img {
       max-width: 100%;
       max-height: 85vh;
       object-fit: contain;
-      border-radius: 4px;
+      border-radius: 6px;
+      background: #fff;
     }
+
     .lightbox-close {
       position: absolute;
-      top: 20px;
-      right: 20px;
+      top: 16px;
+      right: 16px;
       color: #fff;
       font-size: 2rem;
       font-weight: 300;
       cursor: pointer;
       background: none;
       border: none;
-      padding: 10px;
+      padding: 8px;
+      line-height: 1;
     }
 
-    /* 푸터 */
-    .footer-corporate { background: #0f172a; color: #94a3b8; padding: 28px 0 20px; font-size: 0.78rem; border-top: 1px solid #1e293b; }
-    .footer-main-layout { display: flex; flex-direction: column; gap: 16px; margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid #1e293b; }
-    .footer-brand { font-size: 0.95rem; font-weight: 700; color: #f1f5f9; margin-bottom: 6px; }
-    .footer-bottom { display: flex; flex-direction: column; gap: 6px; }
+    /* Footer */
+    .footer-corporate {
+      background: #0f172a;
+      color: #94a3b8;
+      padding: 28px 0 20px;
+      font-size: 0.8rem;
+      border-top: 1px solid #1e293b;
+    }
 
-    /* 태블릿 및 데스크탑 반응형 미디어쿼리 */
+    .footer-main-layout {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 16px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #1e293b;
+    }
+
+    .footer-brand {
+      font-size: 0.98rem;
+      font-weight: 800;
+      color: #f1f5f9;
+      margin-bottom: 6px;
+    }
+
+    .footer-bottom {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .footer-corporate a {
+      color: #cbd5e1;
+    }
+
+    /* Floating mobile CTA */
+    .floating-cta {
+      position: fixed;
+      left: 16px;
+      right: 16px;
+      bottom: 16px;
+      z-index: 990;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .floating-cta a {
+      min-height: 50px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.92rem;
+      font-weight: 800;
+      box-shadow: 0 12px 24px rgba(15, 23, 42, 0.18);
+    }
+
+    .floating-call {
+      background: #fff;
+      color: var(--primary);
+      border: 1px solid var(--border);
+    }
+
+    .floating-mail {
+      background: var(--accent);
+      color: #fff;
+    }
+
     @media (min-width: 768px) {
-      .container { width: min(var(--max-width), calc(100% - 48px)); padding-left: 0; padding-right: 0; }
-      h1 { font-size: 1.8rem; }
-      h2 { font-size: 1.45rem; }
-      h3 { font-size: 1.2rem; }
-      p { font-size: 0.95rem; }
-      
-      .header-box { padding: 0; min-height: 70px; }
-      .logo-sub { display: inline; border-left: 1px solid var(--border); padding-left: 12px; }
-      .nav-links { gap: 24px; overflow: visible; }
-      .nav-links a { font-size: 0.9rem; }
-      
-      .category-tab-bar { top: 70px; }
-      .tab-menu { gap: 10px; }
-      .tab-btn { border-radius: var(--radius); padding: 10px 20px; font-size: 0.95rem; }
-      
-      .product-tab-content { padding: 24px; }
-      .sub-product-card { padding: 20px; }
-      
+      .container {
+        width: min(var(--max-width), calc(100% - 48px));
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      h1 { font-size: 2.1rem; }
+      h2 { font-size: 1.6rem; }
+      h3 { font-size: 1.18rem; }
+      p { font-size: 0.96rem; }
+
+      .header-box {
+        padding: 0;
+        min-height: var(--header-height-desktop);
+      }
+
+      .logo-sub {
+        display: inline;
+        border-left: 1px solid var(--border);
+        padding-left: 12px;
+      }
+
+      .nav-links {
+        gap: 24px;
+        overflow: visible;
+      }
+
+      .nav-links a {
+        font-size: 0.9rem;
+      }
+
+      .page-header {
+        padding: 44px 0 34px;
+      }
+
+      .page-header-grid {
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 26px;
+        align-items: start;
+      }
+
+      .page-points {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .category-tab-bar {
+        top: var(--header-height-desktop);
+      }
+
+      .tab-menu {
+        gap: 10px;
+        padding: 14px 0;
+      }
+
+      .tab-btn {
+        border-radius: var(--radius);
+        padding: 10px 18px;
+        font-size: 0.94rem;
+      }
+
+      .product-detail-section {
+        padding: 28px 0 60px;
+      }
+
+      .product-tab-content {
+        padding: 24px;
+      }
+
+      .product-header-box {
+        grid-template-columns: 1.1fr 0.9fr;
+        align-items: start;
+      }
+
+      .sub-product-card {
+        padding: 20px;
+      }
+
       .detail-img-grid {
         grid-template-columns: repeat(3, 1fr);
-        gap: 16px;
+        gap: 14px;
       }
-      .spec-table { font-size: 0.95rem; }
-      .spec-table th, .spec-table td { padding: 12px 16px; }
-      .btn-fill { width: auto; }
-      
-      .footer-main-layout { flex-direction: row; justify-content: space-between; }
-      .footer-bottom { flex-direction: row; justify-content: space-between; }
+
+      .spec-table {
+        font-size: 0.94rem;
+      }
+
+      .spec-table th,
+      .spec-table td {
+        padding: 12px 16px;
+      }
+
+      .cta-panel .btn-wrap {
+        grid-template-columns: repeat(2, auto);
+        justify-content: start;
+      }
+
+      .footer-main-layout {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      .footer-bottom {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      .floating-cta {
+        display: none;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      * { transition: none !important; animation: none !important; }
     }
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "세린린넨 납품 품목 상세",
+    "url": "https://www.serinlinen.com/product-detail.html",
+    "description": "세린린넨의 병원 린넨 및 환자복 상세 품목 페이지",
+    "publisher": {
+      "@type": "Organization",
+      "name": "세린린넨",
+      "url": "https://www.serinlinen.com/"
+    }
+  }
+  </script>
 </head>
 <body>
 
@@ -340,246 +794,518 @@
         <a href="index.html" class="logo-title">세린린넨</a>
         <span class="logo-sub">병원 린넨 제조·공급 파트너</span>
       </div>
-      <nav class="nav-links">
+      <nav class="nav-links" aria-label="주요 메뉴">
         <a href="index.html#about">회사소개</a>
-        <a href="index.html#fabric">원단</a>
-        <a href="index.html#facility">공정</a>
-        <a href="product-detail.html" style="color:var(--accent);">납품품목스펙</a>
+        <a href="index.html#trust">신뢰포인트</a>
+        <a href="product-detail.html" class="active-link">납품품목</a>
+        <a href="index.html#process">거래절차</a>
         <a href="index.html#contact">조달문의</a>
       </nav>
     </div>
   </header>
 
-  <!-- 페이지 타이틀 -->
+  <!-- 페이지 상단 -->
   <section class="page-header">
-    <div class="container">
-      <h1>납품 품목 상세 스펙</h1>
-      <p>카테고리를 선택하여 세린린넨의 의료용 품목별 상세 사양을 확인하세요.</p>
+    <div class="container page-header-grid">
+      <div>
+        <div class="eyebrow">세린린넨 납품 품목 상세</div>
+        <h1>카테고리별 품목을 빠르게 확인하고<br />바로 조달 문의까지 연결할 수 있습니다</h1>
+        <p>
+          메인페이지에서 선택한 카테고리로 바로 진입할 수 있도록 구성했습니다.
+          병원 운영에 필요한 환의 및 의료복류, 수술·처치용 린넨류, 병실 침구류, 보호대 및 보조용품 범위를 확인하신 뒤
+          품목·수량·납기 기준으로 바로 문의하실 수 있습니다.
+        </p>
+
+        <div class="page-points">
+          <div class="page-point">
+            <strong>카테고리 직행</strong>
+            <span>메인페이지 카드 클릭 시 해당 품목군으로 바로 이동</span>
+          </div>
+          <div class="page-point">
+            <strong>맞춤 협의 중심</strong>
+            <span>규격·원단·디자인·납품 단위는 병원별 협의 가능</span>
+          </div>
+          <div class="page-point">
+            <strong>문의 전환 강화</strong>
+            <span>상세 확인 후 전화·이메일로 즉시 연결 가능</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="header-cta-box">
+        <h3>빠른 문의</h3>
+        <p>희망 품목과 예상 수량이 있으면 상담이 훨씬 빨라집니다.</p>
+        <div class="cta-stack">
+          <a href="tel:0517473511" class="btn btn-fill">전화 문의 051-747-3511</a>
+          <a href="mailto:made@serinlinen.com?subject=%5B%EC%A1%B0%EB%8B%AC%20%EB%AC%B8%EC%9D%98%5D%20%EC%84%B8%EB%A6%B0%EB%A6%B0%EB%84%A8" class="btn btn-accent">이메일 문의 보내기</a>
+          <a href="index.html#contact" class="btn btn-stroke">메인 문의 페이지로 이동</a>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- 카테고리 탭 메뉴 바 -->
-  <div class="category-tab-bar">
+  <!-- 카테고리 탭 -->
+  <div class="category-tab-bar" id="categoryTabBar">
     <div class="container">
-      <div class="tab-menu">
-        <button class="tab-btn active" onclick="switchTab('tab-clothes', this)">환의 및 의료복류</button>
-        <button class="tab-btn" onclick="switchTab('tab-cloth', this)">수술·처치용 린넨류</button>
-        <button class="tab-btn" onclick="switchTab('tab-sheet', this)">침구 및 병실 린넨류</button>
-        <button class="tab-btn" onclick="switchTab('tab-aid', this)">보호대 및 보조용품</button>
+      <div class="tab-menu" aria-label="카테고리 탭">
+        <a href="#gown" class="tab-btn active" data-target="gown">환의 및 의료복류</a>
+        <a href="#drape" class="tab-btn" data-target="drape">수술·처치용 린넨류</a>
+        <a href="#bedding" class="tab-btn" data-target="bedding">침구 및 병실 린넨류</a>
+        <a href="#protector" class="tab-btn" data-target="protector">보호대 및 보조용품</a>
       </div>
     </div>
   </div>
 
-  <!-- 제품 상세 정보 섹션 -->
+  <!-- 제품 상세 -->
   <section class="product-detail-section">
     <div class="container">
 
-      <!-- 1. 환의 및 의료복류 탭 내용 -->
-      <div id="tab-clothes" class="product-tab-content active">
-        <span class="product-name-badge">메디컬 의류 라인업</span>
-        <h2>환의 및 의료복류 제품군</h2>
-        <p>환우 및 의료진의 편의와 우수한 위생·세탁 내구성을 갖춘 메디컬 의류입니다.</p>
+      <!-- 1. 환의 및 의료복류 -->
+      <section id="gown" class="product-tab-content active">
+        <div class="product-header-box">
+          <div>
+            <span class="product-name-badge">메디컬 의류 라인업</span>
+            <h2>환의 및 의료복류</h2>
+            <p>
+              환자와 의료진의 편의, 반복 세탁 환경, 운영 실사용성을 고려한 메디컬 의류 제품군입니다.
+              병원별 컬러, 규격, 로고 적용 여부, 원단 사양에 따라 협의형 제작이 가능합니다.
+            </p>
+          </div>
 
-        <!-- 환자복 서브 카드 -->
+          <div class="product-summary-card">
+            <h3>이 카테고리에서 주로 보는 포인트</h3>
+            <ul>
+              <li>환자 착용 편의성과 활동성</li>
+              <li>반복 세탁 기준 내구성</li>
+              <li>기관별 컬러·로고·사이즈 맞춤 여부</li>
+              <li>초도 공급 및 정기 납품 협의 가능성</li>
+            </ul>
+          </div>
+        </div>
+
         <div class="sub-product-card" id="patient-gown">
-          <h3>[품명] 환자복</h3>
-          <p>편안한 착용감과 내구성을 제공하는 표준 환자복입니다.</p>
-          <div class="detail-img-grid">
-            <div class="detail-img-item" onclick="openLightbox(this)">
-              <img src="./images/환의1.png" alt="환자복 전면 착용 컷" />
+          <div class="sub-product-head">
+            <div>
+              <h3>[품명] 환자복</h3>
+              <p>입원 환자용 표준 환의로 편안한 착용감과 운영 편의성을 고려한 기본 제품입니다.</p>
             </div>
-            <div class="detail-img-item" onclick="openLightbox(this)">
-              <img src="./images/환의2.jpg" alt="환자복 측면 착용 컷" />
+            <div class="sub-product-meta">
+              <span class="meta-chip">환자복 일체</span>
+              <span class="meta-chip">맞춤 제작 협의</span>
+              <span class="meta-chip">대량 조달 가능</span>
             </div>
           </div>
+
+          <div class="detail-img-grid">
+            <div class="detail-img-item" onclick="openLightbox(this)">
+              <img src="./images/환의1.png" alt="환자복 전면 착용 컷" loading="lazy" />
+            </div>
+            <div class="detail-img-item" onclick="openLightbox(this)">
+              <img src="./images/환의2.jpg" alt="환자복 측면 착용 컷" loading="lazy" />
+            </div>
+          </div>
+
           <table class="spec-table">
             <tr><th>품명</th><td>환자복</td></tr>
             <tr><th>원단 및 소재</th><td>맞춤 제작 가능 (병원 요구 사양 및 원단 반영)</td></tr>
-            <tr><th>색상 및 디자인</th><td>맞춤 제작 가능 (기관별 지정 컬러, 파이핑 및 로고 매칭)</td></tr>
+            <tr><th>색상 및 디자인</th><td>맞춤 제작 가능 (기관별 지정 컬러, 파이핑, 로고 매칭)</td></tr>
             <tr><th>사이즈 및 규격</th><td>맞춤 제작 가능</td></tr>
-            <tr><th>납품 단위</th><td>병원 대량 조달 및 정기 납품 계약 기반</td></tr>
+            <tr><th>납품 방식</th><td>초도 공급 및 정기 납품 계약 기반 협의</td></tr>
           </table>
         </div>
 
-        <!-- 검진가운 서브 카드 -->
-        <div class="sub-product-card" id="gown" style="margin-top: 16px;">
-          <h3>[품명] 검진가운</h3>
-          <p>진료 및 검진 시 최적의 편리함을 제공하는 검진가운입니다.</p>
-          <div class="detail-img-grid">
-            <div class="detail-img-item" onclick="openLightbox(this)">
-              <img src="./images/검진가운1.png" alt="검진가운 전면 착용 컷" />
+        <div class="sub-product-card" id="exam-gown">
+          <div class="sub-product-head">
+            <div>
+              <h3>[품명] 검진가운</h3>
+              <p>검진 및 진료 환경에서 활용되는 가운형 의류로 착탈 편의와 기관별 운영 목적을 반영할 수 있습니다.</p>
             </div>
-            <div class="detail-img-item" onclick="openLightbox(this)">
-              <img src="./images/검진가운2.png" alt="검진가운 측면 착용 컷" />
-            </div>
-            <div class="detail-img-item" onclick="openLightbox(this)">
-              <img src="./images/검진가운3.png" alt="검진가운 후면 착용 컷" />
+            <div class="sub-product-meta">
+              <span class="meta-chip">검진복</span>
+              <span class="meta-chip">기관별 컬러 협의</span>
+              <span class="meta-chip">로고 적용 가능</span>
             </div>
           </div>
+
+          <div class="detail-img-grid">
+            <div class="detail-img-item" onclick="openLightbox(this)">
+              <img src="./images/검진가운1.png" alt="검진가운 전면 착용 컷" loading="lazy" />
+            </div>
+            <div class="detail-img-item" onclick="openLightbox(this)">
+              <img src="./images/검진가운2.png" alt="검진가운 측면 착용 컷" loading="lazy" />
+            </div>
+            <div class="detail-img-item" onclick="openLightbox(this)">
+              <img src="./images/검진가운3.png" alt="검진가운 후면 착용 컷" loading="lazy" />
+            </div>
+          </div>
+
           <table class="spec-table">
             <tr><th>품명</th><td>검진가운</td></tr>
             <tr><th>원단 및 소재</th><td>맞춤 제작 가능 (병원 요구 사양 및 원단 선택 반영)</td></tr>
-            <tr><th>색상 및 디자인</th><td>맞춤 제작 가능 (기관별 지정 컬러, 파이핑 및 로고 매칭)</td></tr>
+            <tr><th>색상 및 디자인</th><td>맞춤 제작 가능 (기관별 지정 컬러, 파이핑, 로고 매칭)</td></tr>
             <tr><th>사이즈 및 규격</th><td>맞춤 제작 가능</td></tr>
-            <tr><th>납품 단위</th><td>병원 대량 조달 및 정기 납품 계약 기반</td></tr>
+            <tr><th>납품 방식</th><td>대량 조달 및 정기 납품 계약 기반</td></tr>
           </table>
         </div>
 
-        <!-- 수술복 서브 카드 -->
-        <div class="sub-product-card" id="surgery-wear" style="margin-top: 16px;">
-          <h3>[품명] 수술복</h3>
-          <p>의료진의 원활한 활동성과 위생 관리에 최적화된 수술복입니다.</p>
-          <div class="detail-img-grid">
-            <div class="detail-img-item" onclick="openLightbox(this)">
-              <img src="./images/수술복1.png" alt="수술복 전면 착용 컷" />
+        <div class="sub-product-card" id="surgery-wear">
+          <div class="sub-product-head">
+            <div>
+              <h3>[품명] 수술복</h3>
+              <p>의료진 활동성과 위생 관리 기준을 고려한 수술복 제품군입니다.</p>
             </div>
-            <div class="detail-img-item" onclick="openLightbox(this)">
-              <img src="./images/수술복2.png" alt="수술복 측면 착용 컷" />
+            <div class="sub-product-meta">
+              <span class="meta-chip">수술복</span>
+              <span class="meta-chip">기능성 원단 협의</span>
+              <span class="meta-chip">의료진용</span>
             </div>
           </div>
+
+          <div class="detail-img-grid">
+            <div class="detail-img-item" onclick="openLightbox(this)">
+              <img src="./images/수술복1.png" alt="수술복 전면 착용 컷" loading="lazy" />
+            </div>
+            <div class="detail-img-item" onclick="openLightbox(this)">
+              <img src="./images/수술복2.png" alt="수술복 측면 착용 컷" loading="lazy" />
+            </div>
+          </div>
+
           <table class="spec-table">
             <tr><th>품명</th><td>수술복</td></tr>
-            <tr><th>원단 및 소재</th><td>맞춤 제작 가능 (병원 요구 사양 및 의료용 기능성 원단 반영)</td></tr>
+            <tr><th>원단 및 소재</th><td>맞춤 제작 가능 (의료용 기능성 원단 사양 반영)</td></tr>
             <tr><th>색상 및 디자인</th><td>맞춤 제작 가능 (기관별 지정 컬러 및 로고 매칭)</td></tr>
             <tr><th>사이즈 및 규격</th><td>맞춤 제작 가능</td></tr>
-            <tr><th>납품 단위</th><td>병원 대량 조달 및 정기 납품 계약 기반</td></tr>
+            <tr><th>납품 방식</th><td>병원 대량 조달 및 정기 납품 계약 기반</td></tr>
           </table>
         </div>
 
-        <!-- 수술원피스 서브 카드 -->
-        <div class="sub-product-card" id="surgery-dress" style="margin-top: 16px;">
-          <h3>[품명] 수술원피스</h3>
-          <p>수술 환경에 특화된 원피스 형태의 전문 의료용 의류입니다.</p>
-          <div class="detail-img-grid">
-            <div class="detail-img-item" onclick="openLightbox(this)">
-              <img src="./images/수술원피스1.png" alt="수술원피스 전면 착용 컷" />
+        <div class="sub-product-card" id="surgery-dress">
+          <div class="sub-product-head">
+            <div>
+              <h3>[품명] 수술원피스</h3>
+              <p>수술 환경에 맞춘 원피스형 메디컬 의류로 사용 목적과 기관 운영 기준에 맞춰 협의할 수 있습니다.</p>
             </div>
-            <div class="detail-img-item" onclick="openLightbox(this)">
-              <img src="./images/수술원피스2.png" alt="수술원피스 측면 착용 컷" />
-            </div>
-            <div class="detail-img-item" onclick="openLightbox(this)">
-              <img src="./images/수술원피스3.png" alt="수술원피스 후면 착용 컷" />
+            <div class="sub-product-meta">
+              <span class="meta-chip">원피스 수술환의</span>
+              <span class="meta-chip">기관 맞춤형</span>
             </div>
           </div>
+
+          <div class="detail-img-grid">
+            <div class="detail-img-item" onclick="openLightbox(this)">
+              <img src="./images/수술원피스1.png" alt="수술원피스 전면 착용 컷" loading="lazy" />
+            </div>
+            <div class="detail-img-item" onclick="openLightbox(this)">
+              <img src="./images/수술원피스2.png" alt="수술원피스 측면 착용 컷" loading="lazy" />
+            </div>
+            <div class="detail-img-item" onclick="openLightbox(this)">
+              <img src="./images/수술원피스3.png" alt="수술원피스 후면 착용 컷" loading="lazy" />
+            </div>
+          </div>
+
           <table class="spec-table">
             <tr><th>품명</th><td>수술원피스</td></tr>
-            <tr><th>원단 및 소재</th><td>맞춤 제작 가능 (병원 요구 사양 및 의료용 기능성 원단 반영)</td></tr>
+            <tr><th>원단 및 소재</th><td>맞춤 제작 가능 (의료용 기능성 원단 반영)</td></tr>
             <tr><th>색상 및 디자인</th><td>맞춤 제작 가능 (기관별 지정 컬러 및 로고 매칭)</td></tr>
             <tr><th>사이즈 및 규격</th><td>맞춤 제작 가능</td></tr>
-            <tr><th>납품 단위</th><td>병원 대량 조달 및 정기 납품 계약 기반</td></tr>
+            <tr><th>납품 방식</th><td>대량 조달 및 정기 납품 계약 기반</td></tr>
           </table>
         </div>
 
-        <!-- 중환자실 원피스 서브 카드 -->
-        <div class="sub-product-card" id="icu-dress" style="margin-top: 16px;">
-          <h3>[품명] 중환자실 원피스</h3>
-          <p>중환자실 환경에 맞추어 환자 케어와 관리가 용이하도록 설계된 전용 원피스입니다.</p>
-          <div class="detail-img-grid">
-            <div class="detail-img-item" onclick="openLightbox(this)">
-              <img src="./images/원피스1.png" alt="중환자실 원피스 착용 컷 1" />
+        <div class="sub-product-card" id="icu-dress">
+          <div class="sub-product-head">
+            <div>
+              <h3>[품명] 중환자실 원피스</h3>
+              <p>중환자실 환경에서 환자 케어와 관리 편의성을 고려한 전용 의류입니다.</p>
             </div>
-            <div class="detail-img-item" onclick="openLightbox(this)">
-              <img src="./images/원피스2.png" alt="중환자실 원피스 착용 컷 2" />
+            <div class="sub-product-meta">
+              <span class="meta-chip">중환자실용</span>
+              <span class="meta-chip">환자 편의 고려</span>
             </div>
           </div>
+
+          <div class="detail-img-grid">
+            <div class="detail-img-item" onclick="openLightbox(this)">
+              <img src="./images/원피스1.png" alt="중환자실 원피스 착용 컷 1" loading="lazy" />
+            </div>
+            <div class="detail-img-item" onclick="openLightbox(this)">
+              <img src="./images/원피스2.png" alt="중환자실 원피스 착용 컷 2" loading="lazy" />
+            </div>
+          </div>
+
           <table class="spec-table">
             <tr><th>품명</th><td>중환자실 원피스</td></tr>
-            <tr><th>원단 및 소재</th><td>맞춤 제작 가능 (병원 요구 사양 및 환자 편의 원단 반영)</td></tr>
-            <tr><th>색상 및 디자인</th><td>맞춤 제작 가능 (기관별 지정 패턴 및 로고 매칭)</td></tr>
+            <tr><th>원단 및 소재</th><td>맞춤 제작 가능 (환자 편의 중심 원단 반영)</td></tr>
+            <tr><th>색상 및 디자인</th><td>맞춤 제작 가능 (기관별 패턴 및 로고 매칭)</td></tr>
             <tr><th>사이즈 및 규격</th><td>맞춤 제작 가능</td></tr>
-            <tr><th>납품 단위</th><td>병원 대량 조달 및 정기 납품 계약 기반</td></tr>
+            <tr><th>납품 방식</th><td>대량 조달 및 정기 납품 계약 기반</td></tr>
           </table>
         </div>
 
-        <!-- 근무복 서브 카드 -->
-        <div class="sub-product-card" id="work-wear" style="margin-top: 16px;">
-          <h3>[품명] 근무복</h3>
-          <p>병원 임직원 및 의료진의 전문성과 활동성을 높여주는 맞춤형 근무복 세트입니다.</p>
+        <div class="sub-product-card" id="work-wear">
+          <div class="sub-product-head">
+            <div>
+              <h3>[품명] 근무복</h3>
+              <p>병원 임직원 및 의료진의 전문성과 활동성을 높여주는 맞춤형 근무복 세트입니다.</p>
+            </div>
+            <div class="sub-product-meta">
+              <span class="meta-chip">근무복</span>
+              <span class="meta-chip">자수·로고 협의</span>
+            </div>
+          </div>
+
           <div class="detail-img-grid">
             <div class="detail-img-item" onclick="openLightbox(this)">
-              <img src="./images/근무복1.png" alt="근무복 전면 착용 컷" />
+              <img src="./images/근무복1.png" alt="근무복 전면 착용 컷" loading="lazy" />
             </div>
             <div class="detail-img-item" onclick="openLightbox(this)">
-              <img src="./images/근무복2.png" alt="근무복 측면 착용 컷" />
+              <img src="./images/근무복2.png" alt="근무복 측면 착용 컷" loading="lazy" />
             </div>
           </div>
+
           <table class="spec-table">
             <tr><th>품명</th><td>근무복</td></tr>
-            <tr><th>원단 및 소재</th><td>맞춤 제작 가능 (병원 요구 사양 및 내구성 중심 기능성 원단 반영)</td></tr>
-            <tr><th>색상 및 디자인</th><td>맞춤 제작 가능 (기관별 지정 컬러, 병원 로고 자수 및 디자인 매칭)</td></tr>
+            <tr><th>원단 및 소재</th><td>맞춤 제작 가능 (내구성 중심 기능성 원단 반영)</td></tr>
+            <tr><th>색상 및 디자인</th><td>맞춤 제작 가능 (기관별 지정 컬러, 병원 로고 자수, 디자인 협의)</td></tr>
             <tr><th>사이즈 및 규격</th><td>맞춤 제작 가능</td></tr>
-            <tr><th>납품 단위</th><td>병원 대량 조달 및 정기 납품 계약 기반</td></tr>
+            <tr><th>납품 방식</th><td>병원 대량 조달 및 정기 납품 계약 기반</td></tr>
           </table>
         </div>
 
-        <div style="margin-top: 16px; text-align: right;">
-          <a href="index.html#contact" class="btn btn-fill">환의 및 의료복류 대량 조달 문의하기</a>
+        <div class="cta-panel">
+          <div>
+            <h3>환의 및 의료복류 문의</h3>
+            <p>희망 품목, 예상 수량, 납기 일정이 있으면 함께 전달해 주세요.</p>
+          </div>
+          <div class="btn-wrap">
+            <a href="tel:0517473511" class="btn btn-light btn-stroke" style="border-color:#fff;color:#fff;background:transparent;">전화 문의</a>
+            <a href="mailto:made@serinlinen.com?subject=%5B%ED%99%98%EC%9D%98%20%EB%B0%8F%20%EC%9D%98%EB%A3%8C%EB%B3%B5%EB%A5%98%20%EB%AC%B8%EC%9D%98%5D%20%EC%84%B8%EB%A6%B0%EB%A6%B0%EB%84%A8" class="btn btn-accent">이메일 문의</a>
+          </div>
         </div>
-      </div>
+      </section>
 
-      <!-- 2. 수술·처치용 린넨류 탭 내용 -->
-      <div id="tab-cloth" class="product-tab-content">
-        <span class="product-name-badge">메디컬 수술·처치 라인업</span>
-        <h2>품명: 수술·처치용 의료용 포</h2>
-        <p>엄격한 위생 기준과 방수 기능이 적용되는 수술 및 처치용 의료용 포 규격 제품입니다.</p>
-        
-        <div class="detail-img-grid" style="grid-template-columns: repeat(1, 1fr); max-width: 300px;">
-          <div class="detail-img-item" onclick="openLightbox(this)">
-            <img src="./images/포1.png" alt="의료용 포 제품 컷" />
+      <!-- 2. 수술·처치용 린넨류 -->
+      <section id="drape" class="product-tab-content">
+        <div class="product-header-box">
+          <div>
+            <span class="product-name-badge">메디컬 수술·처치 라인업</span>
+            <h2>수술·처치용 린넨류</h2>
+            <p>
+              수술포, 기구포 등 수술·처치 환경에서 활용되는 메디컬 린넨류입니다.
+              목적별 규격과 원단 사양, 방수 여부, 사용 환경 기준에 따라 협의형 제작이 가능합니다.
+            </p>
+          </div>
+
+          <div class="product-summary-card">
+            <h3>이 카테고리 핵심 확인 사항</h3>
+            <ul>
+              <li>수술·처치 목적에 맞는 규격</li>
+              <li>원단 및 방수 기능 여부</li>
+              <li>기구포·수술포 구분 운영</li>
+              <li>대량 공급 및 정기 납품 협의</li>
+            </ul>
           </div>
         </div>
 
-        <table class="spec-table">
-          <tr><th>품명</th><td>수술·처치용 의료용 포</td></tr>
-          <tr><th>원단 및 소재</th><td>맞춤 제작 가능 (방수 기능 및 고밀도 의료용 원단 선택 반영)</td></tr>
-          <tr><th>색상 및 디자인</th><td>맞춤 제작 가능 (기관별 지정 컬러 및 규격 매칭)</td></tr>
-          <tr><th>사이즈 및 규격</th><td>맞춤 제작 가능 (수술용·처치용 목적별 맞춤 설계)</td></tr>
-          <tr><th>납품 단위</th><td>병원 대량 조달 및 정기 납품 계약 기반</td></tr>
-        </table>
+        <div class="sub-product-card" id="surgical-drape">
+          <div class="sub-product-head">
+            <div>
+              <h3>[품명] 수술·처치용 의료용 포</h3>
+              <p>엄격한 위생 기준과 운영 환경에 맞춰 활용되는 수술·처치용 의료용 포 제품군입니다.</p>
+            </div>
+            <div class="sub-product-meta">
+              <span class="meta-chip">수술포</span>
+              <span class="meta-chip">기구포</span>
+              <span class="meta-chip">규격 협의 가능</span>
+            </div>
+          </div>
 
-        <div style="margin-top: 16px; text-align: right;">
-          <a href="index.html#contact" class="btn btn-fill">수술·처치용 린넨류 조달 문의하기</a>
-        </div>
-      </div>
+          <div class="detail-img-grid" style="grid-template-columns: repeat(1, 1fr); max-width: 300px;">
+            <div class="detail-img-item" onclick="openLightbox(this)">
+              <img src="./images/포1.png" alt="의료용 포 제품 컷" loading="lazy" />
+            </div>
+          </div>
 
-      <!-- 3. 침구 및 병실 린넨류 탭 내용 -->
-      <div id="tab-sheet" class="product-tab-content">
-        <span class="product-name-badge">메디컬 침구 라인업</span>
-        <h2>침구 및 병실 린넨류</h2>
-        <p>병상 환경을 청결하고 안락하게 유지하는 고밀도 시트, 커버 및 침구 제품군입니다.</p>
-
-        <div class="empty-content-box">
-          <h3 style="color: var(--primary); margin-bottom: 6px;">침구 및 병실 린넨류 상세 스펙 및 사진 준비 중</h3>
-          <p style="margin-bottom: 0;">추후 해당 카테고리 사진과 스펙 정보가 업데이트될 예정입니다.</p>
-        </div>
-
-        <div style="margin-top: 16px; text-align: right;">
-          <a href="index.html#contact" class="btn btn-fill">침구 및 병실 린넨류 조달 문의하기</a>
-        </div>
-      </div>
-
-      <!-- 4. 보호대 및 보조용품 탭 내용 -->
-      <div id="tab-aid" class="product-tab-content">
-        <span class="product-name-badge">메디컬 보호대 및 보조용품 라인업</span>
-        <h2>보호대 및 병동 보조용품</h2>
-        <p>환자의 안전한 이동과 보호를 돕기 위해 원내에서 활용되는 보호대 및 보조 용품입니다.</p>
-
-        <div class="empty-content-box">
-          <h3 style="color: var(--primary); margin-bottom: 6px;">보호대 및 보조용품 상세 스펙 및 사진 준비 중</h3>
-          <p style="margin-bottom: 0;">추후 해당 카테고리 사진과 스펙 정보가 업데이트될 예정입니다.</p>
+          <table class="spec-table">
+            <tr><th>품명</th><td>수술·처치용 의료용 포</td></tr>
+            <tr><th>주요 적용 품목</th><td>수술포, 기구포 등 목적별 운영 품목</td></tr>
+            <tr><th>원단 및 소재</th><td>맞춤 제작 가능 (방수 기능, 고밀도 의료용 원단 선택 반영)</td></tr>
+            <tr><th>색상 및 디자인</th><td>맞춤 제작 가능 (기관별 컬러 및 규격 매칭)</td></tr>
+            <tr><th>사이즈 및 규격</th><td>수술용·처치용 목적별 맞춤 설계 가능</td></tr>
+            <tr><th>납품 방식</th><td>병원 대량 조달 및 정기 납품 계약 기반</td></tr>
+          </table>
         </div>
 
-        <div style="margin-top: 16px; text-align: right;">
-          <a href="index.html#contact" class="btn btn-fill">보호대 및 보조용품 조달 문의하기</a>
+        <div class="guidance-box">
+          <span class="status-chip">협의 가능 품목 범위</span>
+          <h3>이런 방식으로 문의하시면 좋습니다</h3>
+          <div class="guidance-list">
+            <div class="guidance-item">사용 목적: 수술용 / 처치용 / 기구포 구분</div>
+            <div class="guidance-item">희망 규격 또는 기존 사용 규격</div>
+            <div class="guidance-item">초도 수량 및 정기 납품 여부</div>
+            <div class="guidance-item">원단·방수 사양 관련 요구사항</div>
+          </div>
         </div>
-      </div>
+
+        <div class="cta-panel">
+          <div>
+            <h3>수술·처치용 린넨류 문의</h3>
+            <p>기존 사용 규격이나 희망 사양이 있으면 함께 주시면 더 빠르게 협의할 수 있습니다.</p>
+          </div>
+          <div class="btn-wrap">
+            <a href="tel:0517473512" class="btn btn-stroke" style="border-color:#fff;color:#fff;background:transparent;">전화 문의</a>
+            <a href="mailto:made@serinlinen.com?subject=%5B%EC%88%98%EC%88%A0%C2%B7%EC%B2%98%EC%B9%98%EC%9A%A9%20%EB%A6%B0%EB%84%A8%EB%A5%98%20%EB%AC%B8%EC%9D%98%5D%20%EC%84%B8%EB%A6%B0%EB%A6%B0%EB%84%A8" class="btn btn-accent">이메일 문의</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. 침구 및 병실 린넨류 -->
+      <section id="bedding" class="product-tab-content">
+        <div class="product-header-box">
+          <div>
+            <span class="product-name-badge">메디컬 침구 라인업</span>
+            <h2>침구 및 병실 린넨류</h2>
+            <p>
+              병실 운영과 반복 세탁 환경을 고려한 침구류 제품군입니다.
+              이불, 시트, 누빔시트, 반시트, 베개피, 레자베개 등 병상 환경에 맞춰 협의 가능합니다.
+            </p>
+          </div>
+
+          <div class="product-summary-card">
+            <h3>이 카테고리 핵심 확인 사항</h3>
+            <ul>
+              <li>병상 규격과 실제 사용 사이즈</li>
+              <li>반복 세탁 기준 내구성</li>
+              <li>품목별 세트 운영 여부</li>
+              <li>초도 공급 수량 및 정기 납품 주기</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="guidance-box">
+          <span class="status-chip">현재 운영 가능 품목</span>
+          <h3>주요 납품 가능 범위</h3>
+          <div class="guidance-list">
+            <div class="guidance-item"><strong>이불</strong> — 병실 운영 기준에 맞춘 협의형 규격 대응</div>
+            <div class="guidance-item"><strong>시트 / 반시트</strong> — 병상 규격과 사용 목적에 맞춘 맞춤 제작 협의</div>
+            <div class="guidance-item"><strong>누빔시트</strong> — 내구성과 사용성을 고려한 사양 협의</div>
+            <div class="guidance-item"><strong>베개피 / 레자베개</strong> — 병실 위생 및 운영 편의 기준 반영</div>
+          </div>
+        </div>
+
+        <div class="sub-product-card" id="bedding-spec">
+          <div class="sub-product-head">
+            <div>
+              <h3>[카테고리 안내] 병실 침구 및 린넨류</h3>
+              <p>현재 사진 자료가 모두 정리되지는 않았지만, 실제 납품 협의는 가능합니다.</p>
+            </div>
+            <div class="sub-product-meta">
+              <span class="meta-chip">이불</span>
+              <span class="meta-chip">시트</span>
+              <span class="meta-chip">누빔시트</span>
+              <span class="meta-chip">반시트</span>
+              <span class="meta-chip">베개피</span>
+              <span class="meta-chip">레자베개</span>
+            </div>
+          </div>
+
+          <table class="spec-table">
+            <tr><th>카테고리</th><td>침구 및 병실 린넨류</td></tr>
+            <tr><th>주요 품목</th><td>이불, 시트, 누빔시트, 반시트, 베개피, 레자베개</td></tr>
+            <tr><th>규격 대응</th><td>병상 규격 및 운영 환경 기준 맞춤 협의 가능</td></tr>
+            <tr><th>원단 및 소재</th><td>사용 목적 및 내구성 기준에 따라 협의 가능</td></tr>
+            <tr><th>납품 방식</th><td>초도 공급 및 정기 납품 계약 기반</td></tr>
+            <tr><th>비고</th><td>상세 사진 및 일부 스펙 정보는 순차 업데이트 예정</td></tr>
+          </table>
+        </div>
+
+        <div class="cta-panel">
+          <div>
+            <h3>침구 및 병실 린넨류 문의</h3>
+            <p>병상 규격, 필요 품목, 예상 수량을 알려주시면 상담이 더 빨라집니다.</p>
+          </div>
+          <div class="btn-wrap">
+            <a href="tel:0517473511" class="btn btn-stroke" style="border-color:#fff;color:#fff;background:transparent;">전화 문의</a>
+            <a href="mailto:made@serinlinen.com?subject=%5B%EC%B9%A8%EA%B5%AC%20%EB%B0%8F%20%EB%B3%91%EC%8B%A4%20%EB%A6%B0%EB%84%A8%EB%A5%98%20%EB%AC%B8%EC%9D%98%5D%20%EC%84%B8%EB%A6%B0%EB%A6%B0%EB%84%A8" class="btn btn-accent">이메일 문의</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. 보호대 및 보조용품 -->
+      <section id="protector" class="product-tab-content">
+        <div class="product-header-box">
+          <div>
+            <span class="product-name-badge">메디컬 보호대 및 보조용품 라인업</span>
+            <h2>보호대 및 보조용품</h2>
+            <p>
+              병동 및 진료 현장에서 환자 보호와 보조 목적에 활용되는 용품군입니다.
+              실제 운영 품목 범위와 규격, 사용 목적에 따라 협의형으로 안내 가능합니다.
+            </p>
+          </div>
+
+          <div class="product-summary-card">
+            <h3>이 카테고리 핵심 확인 사항</h3>
+            <ul>
+              <li>어느 진료과/병동에서 사용하는지</li>
+              <li>필요 보호대 종류와 목적</li>
+              <li>초도 도입 수량과 반복 발주 여부</li>
+              <li>기존 사용 사양 또는 대체 품목 여부</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="guidance-box">
+          <span class="status-chip">현재 안내 가능 품목</span>
+          <h3>주요 협의 가능 범위</h3>
+          <div class="guidance-list">
+            <div class="guidance-item">팔걸이 / 복대 / 벨포밴드 / 쇄골밴드</div>
+            <div class="guidance-item">발목보호대 / 손목보호대 / 무릎보호대</div>
+            <div class="guidance-item">체스트밴드 / 캐스트슈즈 / 소프트칼라 / 코르셋</div>
+            <div class="guidance-item">기타 병동 운영 목적의 밴드류 및 보조용품</div>
+          </div>
+        </div>
+
+        <div class="sub-product-card" id="protector-spec">
+          <div class="sub-product-head">
+            <div>
+              <h3>[카테고리 안내] 보호대 및 병동 보조용품</h3>
+              <p>현재 대표 사진은 순차 업데이트 예정이지만, 품목 협의 및 조달 문의는 가능합니다.</p>
+            </div>
+            <div class="sub-product-meta">
+              <span class="meta-chip">보호대</span>
+              <span class="meta-chip">밴드류</span>
+              <span class="meta-chip">보조용품</span>
+            </div>
+          </div>
+
+          <table class="spec-table">
+            <tr><th>카테고리</th><td>보호대 및 보조용품</td></tr>
+            <tr><th>주요 품목</th><td>팔걸이, 복대, 벨포밴드, 쇄골밴드, 발목/손목/무릎보호대, 체스트밴드, 캐스트슈즈, 소프트칼라, 코르셋 등</td></tr>
+            <tr><th>운영 방식</th><td>병동 및 진료 목적에 맞춘 품목 협의</td></tr>
+            <tr><th>규격 및 사양</th><td>사용 목적과 기관 운영 기준에 따라 협의 가능</td></tr>
+            <tr><th>납품 방식</th><td>초도 공급 및 반복 납품 협의 가능</td></tr>
+            <tr><th>비고</th><td>상세 사진 및 개별 스펙은 순차 업데이트 예정</td></tr>
+          </table>
+        </div>
+
+        <div class="cta-panel">
+          <div>
+            <h3>보호대 및 보조용품 문의</h3>
+            <p>원하시는 품목명이나 현재 사용 중인 대체 품목이 있으면 함께 알려주세요.</p>
+          </div>
+          <div class="btn-wrap">
+            <a href="tel:0517473512" class="btn btn-stroke" style="border-color:#fff;color:#fff;background:transparent;">전화 문의</a>
+            <a href="mailto:made@serinlinen.com?subject=%5B%EB%B3%B4%ED%98%B8%EB%8C%80%20%EB%B0%8F%20%EB%B3%B4%EC%A1%B0%EC%9A%A9%ED%92%88%20%EB%AC%B8%EC%9D%98%5D%20%EC%84%B8%EB%A6%B0%EB%A6%B0%EB%84%A8" class="btn btn-accent">이메일 문의</a>
+          </div>
+        </div>
+      </section>
 
     </div>
   </section>
 
-  <!-- 이미지 확대 라이트박스 팝업 -->
-  <div id="lightbox-modal" onclick="closeLightbox()">
-    <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+  <!-- 라이트박스 -->
+  <div id="lightbox-modal" onclick="closeLightbox(event)">
+    <button class="lightbox-close" onclick="closeLightbox(event)" aria-label="확대 이미지 닫기">&times;</button>
     <img id="lightbox-img" src="" alt="확대 이미지" />
   </div>
 
@@ -590,54 +1316,134 @@
         <div>
           <div class="footer-brand">세린린넨</div>
           <p style="color:#94a3b8; margin-bottom:4px;"><strong>본사 및 공장 :</strong> 부산광역시 기장군 기장읍 내리1길 12</p>
-          <p style="color:#94a3b8; margin-bottom:4px;"><strong>대표전화 :</strong> 051-747-3511 / 051-747-3512 | <strong>FAX :</strong> 051-747-3513</p>
-          <p style="color:#94a3b8; margin-bottom:0;"><strong>이메일 :</strong> made@serinlinen.com</p>
+          <p style="color:#94a3b8; margin-bottom:4px;">
+            <strong>대표전화 :</strong>
+            <a href="tel:0517473511">051-747-3511</a> /
+            <a href="tel:0517473512">051-747-3512</a>
+            | <strong>FAX :</strong> 051-747-3513
+          </p>
+          <p style="color:#94a3b8; margin-bottom:0;">
+            <strong>이메일 :</strong> <a href="mailto:made@serinlinen.com">made@serinlinen.com</a>
+          </p>
         </div>
         <div>
-          <div style="font-weight:700; color:#cbd5e1; margin-bottom:6px;">물류 거점 안내</div>
-          <p style="color:#64748b; line-height:1.4; margin:0;">
-            부산 기반의 직배송망을 중심으로 운영되며, 체계적인 전국 정기 연계 물류 네트워크를 통해 타 지역 의료기관 역시 신속하고 정확한 조달이 가능합니다.
+          <div style="font-weight:700; color:#cbd5e1; margin-bottom:6px;">공급 안내</div>
+          <p style="color:#64748b; line-height:1.5; margin:0;">
+            병원별 품목, 규격, 수량, 납기 기준에 따라 공급 방향을 협의합니다.
+            상세 품목 확인 후 전화 또는 이메일로 바로 문의해 주세요.
           </p>
         </div>
       </div>
       <div class="footer-bottom">
-        <div>© 2026 세린린넨. All Rights Reserved.</div>
-        <div><a href="index.html#about" style="color:#64748b;">개인정보 처리방침</a></div>
+        <div>© <span id="currentYear"></span> 세린린넨. All Rights Reserved.</div>
+        <div><a href="privacy.html">개인정보 처리방침</a></div>
       </div>
     </div>
   </footer>
 
-  <!-- 자바스크립트 스크립트 -->
+  <!-- 모바일 고정 CTA -->
+  <div class="floating-cta" aria-label="빠른 문의">
+    <a href="tel:0517473511" class="floating-call">전화 문의</a>
+    <a href="mailto:made@serinlinen.com" class="floating-mail">이메일 문의</a>
+  </div>
+
   <script>
-    function switchTab(tabId, btnElement) {
-      const contents = document.querySelectorAll('.product-tab-content');
-      contents.forEach(content => content.classList.remove('active'));
+    const TAB_IDS = ["gown", "drape", "bedding", "protector"];
 
-      const buttons = document.querySelectorAll('.tab-btn');
-      buttons.forEach(btn => btn.classList.remove('active'));
+    function activateTab(tabId, options = {}) {
+      const { updateHash = true } = options;
+      const safeTabId = TAB_IDS.includes(tabId) ? tabId : "gown";
 
-      document.getElementById(tabId).classList.add('active');
-      btnElement.classList.add('active');
-      window.scrollTo({ top: 120, behavior: 'smooth' });
+      document.querySelectorAll(".product-tab-content").forEach(section => {
+        section.classList.remove("active");
+      });
+
+      document.querySelectorAll(".tab-btn").forEach(btn => {
+        btn.classList.remove("active");
+      });
+
+      const targetSection = document.getElementById(safeTabId);
+      const targetButton = document.querySelector('.tab-btn[data-target="' + safeTabId + '"]');
+
+      if (targetSection) targetSection.classList.add("active");
+      if (targetButton) targetButton.classList.add("active");
+
+      if (updateHash) {
+        history.replaceState(null, "", "#" + safeTabId);
+      }
     }
 
-    // 이미지 확대 라이트박스 열기
+    function initializeTabFromHash() {
+      const hash = window.location.hash.replace("#", "");
+      if (TAB_IDS.includes(hash)) {
+        activateTab(hash, { updateHash: false });
+      } else {
+        activateTab("gown", { updateHash: false });
+      }
+    }
+
+    document.querySelectorAll(".tab-btn").forEach(button => {
+      button.addEventListener("click", function (e) {
+        e.preventDefault();
+        const target = this.dataset.target;
+        activateTab(target, { updateHash: true });
+
+        const tabBar = document.getElementById("categoryTabBar");
+        const header = document.querySelector(".header");
+        const y =
+          tabBar.getBoundingClientRect().top +
+          window.pageYOffset -
+          header.offsetHeight -
+          8;
+
+        window.scrollTo({
+          top: y,
+          behavior: "smooth"
+        });
+      });
+    });
+
+    window.addEventListener("hashchange", () => {
+      const hash = window.location.hash.replace("#", "");
+      if (TAB_IDS.includes(hash)) {
+        activateTab(hash, { updateHash: false });
+      }
+    });
+
     function openLightbox(element) {
-      const img = element.querySelector('img');
-      const modal = document.getElementById('lightbox-modal');
-      const modalImg = document.getElementById('lightbox-img');
+      const img = element.querySelector("img");
+      if (!img) return;
+
+      const modal = document.getElementById("lightbox-modal");
+      const modalImg = document.getElementById("lightbox-img");
+
       modalImg.src = img.src;
-      modal.classList.add('active');
-      document.body.style.overflow = 'hidden'; // 배경 스크롤 방지
+      modalImg.alt = img.alt || "확대 이미지";
+      modal.classList.add("active");
+      document.body.style.overflow = "hidden";
     }
 
-    // 이미지 확대 라이트박스 닫기
-    function closeLightbox() {
-      const modal = document.getElementById('lightbox-modal');
-      modal.classList.remove('active');
-      document.body.style.overflow = 'auto'; // 스크롤 복원
+    function closeLightbox(event) {
+      if (event) {
+        const isOverlay = event.target.id === "lightbox-modal";
+        const isCloseButton = event.target.classList.contains("lightbox-close");
+        if (!isOverlay && !isCloseButton) return;
+      }
+
+      const modal = document.getElementById("lightbox-modal");
+      modal.classList.remove("active");
+      document.body.style.overflow = "auto";
     }
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") {
+        closeLightbox();
+      }
+    });
+
+    document.getElementById("currentYear").textContent = new Date().getFullYear();
+
+    initializeTabFromHash();
   </script>
-
 </body>
 </html>
