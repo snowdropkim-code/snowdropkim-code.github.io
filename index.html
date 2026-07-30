@@ -144,7 +144,13 @@
       border-color: var(--accent);
       box-shadow: 0 12px 24px rgba(15, 23, 42, 0.08);
     }
-    .product-showcase-img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; background: #eee; }
+    .product-showcase-img { 
+      width: 100%; 
+      aspect-ratio: 3 / 4; 
+      object-fit: contain; 
+      background: #f8fafc; 
+      padding: 12px;
+    }
     .product-showcase-info { padding: 16px; }
     .product-showcase-badge { display: inline-block; background: var(--accent-light); color: var(--accent); font-size: 0.75rem; font-weight: 700; padding: 3px 8px; border-radius: 4px; margin-bottom: 8px; }
     .product-showcase-title { margin: 0 0 4px; font-size: 1.05rem; font-weight: 700; color: var(--primary); display: flex; align-items: center; justify-content: space-between; }
